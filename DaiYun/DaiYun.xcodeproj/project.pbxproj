@@ -12,6 +12,7 @@
 		1FFA27131F25EAA80051E228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27111F25EAA80051E228 /* Main.storyboard */; };
 		1FFA27151F25EAA80051E228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27141F25EAA80051E228 /* Assets.xcassets */; };
 		1FFA27181F25EAA80051E228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27161F25EAA80051E228 /* LaunchScreen.storyboard */; };
+		7D08ED781628CA1C5F7F4C4A /* Pods_DaiYun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3042DC189EA71C883C34C6EB /* Pods_DaiYun.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		1FFA27141F25EAA80051E228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FFA27171F25EAA80051E228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FFA27191F25EAA80051E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BE68AE6D96BD1D66051FE1B /* Pods-DaiYun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaiYun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaiYun/Pods-DaiYun.debug.xcconfig"; sourceTree = "<group>"; };
+		3042DC189EA71C883C34C6EB /* Pods_DaiYun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaiYun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB20F2B0CE39AA2F1075467B /* Pods-DaiYun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaiYun.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaiYun/Pods-DaiYun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D08ED781628CA1C5F7F4C4A /* Pods_DaiYun.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				1FFA270C1F25EAA80051E228 /* DaiYun */,
 				1FFA270B1F25EAA80051E228 /* Products */,
+				E20BB627DEB71D4C15BB281B /* Pods */,
+				574A7CECEA6A2D78632F379D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = DaiYun;
 			sourceTree = "<group>";
 		};
+		574A7CECEA6A2D78632F379D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3042DC189EA71C883C34C6EB /* Pods_DaiYun.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E20BB627DEB71D4C15BB281B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BE68AE6D96BD1D66051FE1B /* Pods-DaiYun.debug.xcconfig */,
+				BB20F2B0CE39AA2F1075467B /* Pods-DaiYun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FFA271C1F25EAA80051E228 /* Build configuration list for PBXNativeTarget "DaiYun" */;
 			buildPhases = (
+				33EBE7A2F3025E305183A2DA /* [CP] Check Pods Manifest.lock */,
 				1FFA27061F25EAA80051E228 /* Sources */,
 				1FFA27071F25EAA80051E228 /* Frameworks */,
 				1FFA27081F25EAA80051E228 /* Resources */,
+				31EA7BEDD94DA6B820E25306 /* [CP] Embed Pods Frameworks */,
+				5228D249B56817C786A97AE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31EA7BEDD94DA6B820E25306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DaiYun/Pods-DaiYun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33EBE7A2F3025E305183A2DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5228D249B56817C786A97AE1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DaiYun/Pods-DaiYun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FFA27061F25EAA80051E228 /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		1FFA271D1F25EAA80051E228 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BE68AE6D96BD1D66051FE1B /* Pods-DaiYun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 77L324L35A;
@@ -273,6 +349,7 @@
 		};
 		1FFA271E1F25EAA80051E228 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB20F2B0CE39AA2F1075467B /* Pods-DaiYun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 77L324L35A;
