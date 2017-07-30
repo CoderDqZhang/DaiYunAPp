@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.0)
   - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManagerSwift (4.0.9)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
@@ -13,17 +14,18 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SnapKit (3.2.0)
-  - SwifterSwift (3.0.0):
-    - SwifterSwift/Cocoa (= 3.0.0)
-    - SwifterSwift/Foundation (= 3.0.0)
-    - SwifterSwift/UIKit (= 3.0.0)
-  - SwifterSwift/Cocoa (3.0.0)
-  - SwifterSwift/Foundation (3.0.0)
-  - SwifterSwift/UIKit (3.0.0)
+  - SwifterSwift (3.1.0):
+    - SwifterSwift/Cocoa (= 3.1.0)
+    - SwifterSwift/Foundation (= 3.1.0)
+    - SwifterSwift/UIKit (= 3.1.0)
+  - SwifterSwift/Cocoa (3.1.0)
+  - SwifterSwift/Foundation (3.1.0)
+  - SwifterSwift/UIKit (3.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - FDFullscreenPopGesture (= 1.1)
+  - IQKeyboardManagerSwift (= 4.0.9)
   - MBProgressHUD
   - MJExtension
   - MJRefresh
@@ -35,6 +37,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -43,8 +46,8 @@ SPEC CHECKSUMS:
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  SwifterSwift: b35d1fee5352da68878f6321b245d3d99c1af32f
+  SwifterSwift: f84eb7308f7742724b3cbf84283ce00f7c06d7fc
 
-PODFILE CHECKSUM: 4a5d7af3f699fb1497138ba797afdc01b5230b8c
+PODFILE CHECKSUM: 29ef030c30a15f2a6255d5b8e091c9fcb151458a
 
 COCOAPODS: 1.1.1

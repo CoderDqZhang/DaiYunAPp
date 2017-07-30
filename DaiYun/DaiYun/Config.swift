@@ -10,24 +10,15 @@ import Foundation
 import UIKit
 
 let App_Theme_FFFFFF_Color = "FFFFFF"
+let App_Theme_FB718C_Color = "FB718C"
+let APP_Theme_F87D95_Color = "F87D95"
+let App_Theme_E9EBF2_Color = "E9EBF2"
 let App_Theme_BBC1CB_Color = "BBC1CB"
 let App_Theme_384249_Color = "384249"
-let App_Theme_A2ABB5_Color = "A2ABB5"
-let App_Theme_594CA8_Color = "594CA8"
-let App_Theme_F8F9F9_Color = "F8F9F9"
 let App_Theme_8A96A2_Color = "8A96A2"
-let App_Theme_556169_Color = "556169"
 let App_Theme_F6F7FA_Color = "F6F7FA"
+let App_Theme_556169_Color = "556169"
 let App_Theme_DDE0E5_Color = "DDE0E5"
-let App_Theme_6B747B_Color = "6B747B"
-let App_Theme_E9EBF2_Color = "E9EBF2"
-let App_Theme_57DAD0_Color = "57DAD0"
-let App_Theme_FF7A5E_Color = "FF7A5E"
-let App_Theme_40C6B7_Color = "40C6B7"
-let App_Theme_A5E9E2_Color = "A5E9E2"
-let App_Theme_7169A5_Color = "7169A5"
-let App_Theme_EE5028_Color = "EE5028"
-
 
 let App_Theme_PinFan_L_11_Font = IPHONE_VERSION > 9 ? UIFont.init(name:".SFUIText-Light", size: 11.0):UIFont.init(name: ".HelveticaNeueInterface-Light", size: 11)
 let App_Theme_PinFan_L_12_Font = IPHONE_VERSION > 9 ? UIFont.init(name:".SFUIText-Light", size: 12.0):UIFont.init(name: ".HelveticaNeueInterface-Light", size: 12)

@@ -11,5 +11,7 @@
 #define DaiYun_Bridging_Header_h
 
 #import "UIColor+Hex.h"
+#import "UIViewController+DismissKeyboard.h"
+#import "UIViewController+hideExcessLine.h"
 
 #endif /* DaiYun_Bridging_Header_h */
