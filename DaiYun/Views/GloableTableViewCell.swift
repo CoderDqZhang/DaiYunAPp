@@ -289,6 +289,32 @@ class GloableImageLableSwitchCell : UITableViewCell {
     }
 }
 
+class GloableNoneCell : UITableViewCell {
+    
+    var didMakeConstraints = false
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setUpView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUpView() {
+        self.updateConstraints()
+    }
+    override func updateConstraints() {
+        if !didMakeConstraints {
+            didMakeConstraints = true
+        }
+        super.updateConstraints()
+    }
+}
+
+
+
 
 
 

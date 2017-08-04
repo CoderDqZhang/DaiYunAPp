@@ -13,5 +13,6 @@
 #import "UIColor+Hex.h"
 #import "UIViewController+DismissKeyboard.h"
 #import "UIViewController+hideExcessLine.h"
+#import "TYTabButtonPagerController.h"
 
 #endif /* DaiYun_Bridging_Header_h */

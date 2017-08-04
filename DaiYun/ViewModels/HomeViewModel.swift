@@ -13,4 +13,16 @@ class HomeViewModel: BaseViewModel {
     override init() {
         
     }
+    
+    func leftBarItemPress() {
+        NavigationPushView(self.controller!, toConroller: FilterViewController())
+    }
+    
+    func rightBarItemPress() {
+        NavigationPushView(self.controller!, toConroller: LikeViewController())
+    }
+    
+    func pushViewController(controller:UIViewController?){
+        NavigationPushView(self.controller!, toConroller: controller!)
+    }
 }
