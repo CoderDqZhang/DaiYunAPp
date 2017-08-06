@@ -39,7 +39,7 @@ class HomeViewController: BaseViewController {
         homePageViewController.progressWidth = 0
         homePageViewController.progressColor = UIColor.init(hexString: App_Theme_FB718C_Color)
         homePageViewController.hidesBottomBarWhenPushed = true
-        homePageViewController.view.frame = CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT - 108)
+        homePageViewController.view.frame = CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT)
         homePageViewController.selectIndexClouse = { index in
             switch Int(index) {
             case 0:

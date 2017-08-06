@@ -39,6 +39,12 @@
 		1FE36B2E1F30731100E895C7 /* LawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B2D1F30731100E895C7 /* LawViewModel.swift */; };
 		1FE36B301F30731F00E895C7 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B2F1F30731F00E895C7 /* MealViewModel.swift */; };
 		1FE36B331F30739500E895C7 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B321F30739500E895C7 /* FilterTableViewCell.swift */; };
+		1FE36B371F35A44500E895C7 /* MotherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B361F35A44500E895C7 /* MotherCollectionViewCell.swift */; };
+		1FE36B3A1F36E70E00E895C7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B391F36E70E00E895C7 /* UserModel.swift */; };
+		1FE36B401F36E75A00E895C7 /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B3D1F36E75A00E895C7 /* JKDBHelper.m */; };
+		1FE36B411F36E75A00E895C7 /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B3F1F36E75A00E895C7 /* JKDBModel.m */; };
+		1FE36B441F36EC3100E895C7 /* MotherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B431F36EC3100E895C7 /* MotherModel.swift */; };
+		1FE36B461F36F62F00E895C7 /* ImageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B451F36F62F00E895C7 /* ImageViewManager.swift */; };
 		1FFA270E1F25EAA80051E228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA270D1F25EAA80051E228 /* AppDelegate.swift */; };
 		1FFA27101F25EAA80051E228 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA270F1F25EAA80051E228 /* ViewController.swift */; };
 		1FFA27131F25EAA80051E228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27111F25EAA80051E228 /* Main.storyboard */; };
@@ -98,6 +104,14 @@
 		1FE36B2D1F30731100E895C7 /* LawViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LawViewModel.swift; sourceTree = "<group>"; };
 		1FE36B2F1F30731F00E895C7 /* MealViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		1FE36B321F30739500E895C7 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		1FE36B361F35A44500E895C7 /* MotherCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotherCollectionViewCell.swift; sourceTree = "<group>"; };
+		1FE36B391F36E70E00E895C7 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1FE36B3C1F36E75A00E895C7 /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
+		1FE36B3D1F36E75A00E895C7 /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
+		1FE36B3E1F36E75A00E895C7 /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
+		1FE36B3F1F36E75A00E895C7 /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
+		1FE36B431F36EC3100E895C7 /* MotherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotherModel.swift; sourceTree = "<group>"; };
+		1FE36B451F36F62F00E895C7 /* ImageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewManager.swift; sourceTree = "<group>"; };
 		1FFA270A1F25EAA80051E228 /* DaiYun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiYun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFA270D1F25EAA80051E228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FFA270F1F25EAA80051E228 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +222,7 @@
 		1FE36B061F306C7000E895C7 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				1FE36B3B1F36E75A00E895C7 /* DBModel */,
 				1FE36B071F306C7900E895C7 /* TYPagerController */,
 			);
 			path = Lib;
@@ -233,6 +248,34 @@
 			isa = PBXGroup;
 			children = (
 				1FE36B321F30739500E895C7 /* FilterTableViewCell.swift */,
+				1FE36B361F35A44500E895C7 /* MotherCollectionViewCell.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		1FE36B381F36E6E000E895C7 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				1FE36B391F36E70E00E895C7 /* UserModel.swift */,
+			);
+			name = Mine;
+			sourceTree = "<group>";
+		};
+		1FE36B3B1F36E75A00E895C7 /* DBModel */ = {
+			isa = PBXGroup;
+			children = (
+				1FE36B3C1F36E75A00E895C7 /* JKDBHelper.h */,
+				1FE36B3D1F36E75A00E895C7 /* JKDBHelper.m */,
+				1FE36B3E1F36E75A00E895C7 /* JKDBModel.h */,
+				1FE36B3F1F36E75A00E895C7 /* JKDBModel.m */,
+			);
+			path = DBModel;
+			sourceTree = "<group>";
+		};
+		1FE36B421F36EC2200E895C7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1FE36B431F36EC3100E895C7 /* MotherModel.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -310,6 +353,8 @@
 		1FFA27221F25F47F0051E228 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1FE36B421F36EC2200E895C7 /* Home */,
+				1FE36B381F36E6E000E895C7 /* Mine */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +383,7 @@
 		1FFA27281F25F5A50051E228 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1FE36B451F36F62F00E895C7 /* ImageViewManager.swift */,
 				1FFA273C1F25F7330051E228 /* ErrorModel.swift */,
 				1FFA27291F25F5B10051E228 /* Tools.swift */,
 			);
@@ -513,6 +559,7 @@
 			files = (
 				1F63C4891F2DCDC40058A997 /* UIViewController+DismissKeyboard.m in Sources */,
 				1F63C46E1F2DCA970058A997 /* HomeViewModel.swift in Sources */,
+				1FE36B401F36E75A00E895C7 /* JKDBHelper.m in Sources */,
 				1FE36B281F3072DB00E895C7 /* FilterViewModel.swift in Sources */,
 				1F63C48B1F2DCF3A0058A997 /* TextField+Extentions.swift in Sources */,
 				1FFA27331F25F6590051E228 /* AlertControl+Tools.swift in Sources */,
@@ -528,7 +575,9 @@
 				1FE36B301F30731F00E895C7 /* MealViewModel.swift in Sources */,
 				1FFA27351F25F6720051E228 /* UIButton+Extentions.swift in Sources */,
 				1FFA27311F25F6190051E228 /* String+Size.swift in Sources */,
+				1FE36B411F36E75A00E895C7 /* JKDBModel.m in Sources */,
 				1FE36B2A1F3072F600E895C7 /* LikeViewModel.swift in Sources */,
+				1FE36B3A1F36E70E00E895C7 /* UserModel.swift in Sources */,
 				1F63C47A1F2DCC060058A997 /* AppThemeTool.swift in Sources */,
 				1F63C4761F2DCBD00058A997 /* LoginViewModel.swift in Sources */,
 				1FE36B111F306C7900E895C7 /* TYPagerController.m in Sources */,
@@ -546,13 +595,16 @@
 				1F63C4681F2DCA630058A997 /* HomeViewController.swift in Sources */,
 				1FE36B121F306C7900E895C7 /* TYTabButtonPagerController.m in Sources */,
 				1F63C4661F2DCA510058A997 /* BaseViewController.swift in Sources */,
+				1FE36B461F36F62F00E895C7 /* ImageViewManager.swift in Sources */,
 				1FFA27101F25EAA80051E228 /* ViewController.swift in Sources */,
 				1FFA27271F25F59F0051E228 /* BaseNetWorke.swift in Sources */,
+				1FE36B371F35A44500E895C7 /* MotherCollectionViewCell.swift in Sources */,
 				1FFA273D1F25F7330051E228 /* ErrorModel.swift in Sources */,
 				1FFA270E1F25EAA80051E228 /* AppDelegate.swift in Sources */,
 				1FE36B241F30723C00E895C7 /* FilterViewController.swift in Sources */,
 				1FFA272D1F25F5EE0051E228 /* Define.swift in Sources */,
 				1FFA273B1F25F6EC0051E228 /* View+Extntion.swift in Sources */,
+				1FE36B441F36EC3100E895C7 /* MotherModel.swift in Sources */,
 				1F63C4861F2DCDBA0058A997 /* UIViewController+hideExcessLine.m in Sources */,
 				1FFA272A1F25F5B10051E228 /* Tools.swift in Sources */,
 				1FFA272E1F25F5EE0051E228 /* Config.swift in Sources */,

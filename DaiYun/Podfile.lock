@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (4.5.0)
   - FDFullscreenPopGesture (1.1)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - IQKeyboardManagerSwift (4.0.9)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
@@ -25,6 +28,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - FDFullscreenPopGesture (= 1.1)
+  - FMDB
   - IQKeyboardManagerSwift (= 4.0.9)
   - MBProgressHUD
   - MJExtension
@@ -37,6 +41,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -48,6 +53,6 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwifterSwift: f84eb7308f7742724b3cbf84283ce00f7c06d7fc
 
-PODFILE CHECKSUM: 29ef030c30a15f2a6255d5b8e091c9fcb151458a
+PODFILE CHECKSUM: 3bfa6aeefb0e2fe8a7da07fa5209b6af4081fbf3
 
 COCOAPODS: 1.1.1

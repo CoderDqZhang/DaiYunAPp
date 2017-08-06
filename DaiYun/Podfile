@@ -13,6 +13,7 @@ target 'DaiYun' do
   pod 'FDFullscreenPopGesture', '1.1'
   pod 'SwifterSwift'
   pod 'MJRefresh'
+  pod 'FMDB'
   pod 'MJExtension'
   pod 'ReactiveCocoa', '~> 5.0.2'
   pod 'IQKeyboardManagerSwift', '4.0.9'

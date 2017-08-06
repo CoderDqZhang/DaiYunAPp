@@ -42,10 +42,10 @@ class BaseNetWorke {
     func getUrlWithString(_ url:String, parameters:AnyObject?) -> Signal<Any, NSError> {
         return Signal.init({ (subscriber) -> Disposable? in
             self.httpRequest(.get, url: url, parameters: parameters, success: { (responseObject) in
-                if ((responseObject is NSDictionary) && (responseObject["message"]!) != nil){
-                    MainThreanShowErrorMessage(responseObject)
+                if ((responseObject is NSDictionary) && (responseObject as! NSDictionary).object(forKey: "status") as! String == "success"){
+                    subscriber.send(value: responseObject["data"]!)
                 }else{
-                    subscriber.send(value: responseObject)
+                    MainThreanShowErrorMessage(["message":"出现错误"] as AnyObject)
                 }
             }, failure: { (responseError) in
                 if responseError is NSDictionary {
@@ -64,14 +64,10 @@ class BaseNetWorke {
     func postUrlWithString(_ url:String, parameters:AnyObject?) -> Signal<Any, NSError> {
         return Signal.init({ (subscriber) -> Disposable? in
             self.httpRequest(.post, url: url, parameters: parameters, success: { (responseObject) in
-                if ((responseObject is NSDictionary) && (responseObject["message"]!) == nil){
-                    subscriber.send(value: responseObject)
+                if ((responseObject is NSDictionary) && (responseObject as! NSDictionary).object(forKey: "status") as! String == "success"){
+                    subscriber.send(value: responseObject["data"]!)
                 }else{
-                    if ((responseObject["code"]!) != nil && (Int(String(describing: (responseObject as! NSDictionary).object(forKey: "code")!))! >= 0)) {
-                        subscriber.send(value: responseObject["message"]! ?? "请求成功")
-                    }else{
-                        MainThreanShowErrorMessage(responseObject)
-                    }
+                    MainThreanShowErrorMessage(["message":"出现错误"] as AnyObject)
                 }
                 subscriber.sendCompleted()
                 }, failure: { (responseError) in
@@ -80,7 +76,6 @@ class BaseNetWorke {
                     }else{
                         print(responseError)
                         MainThreanShowNetWorkError(responseError)
-//                        subscriber.send(error: responseError as! NSError)
                     }
                 subscriber.sendCompleted()
             })
@@ -97,17 +92,16 @@ class BaseNetWorke {
     func putUrlWithString(_ url:String, parameters:AnyObject?) -> Signal<Any, NSError> {
         return Signal.init({ (subscriber) -> Disposable? in
             self.httpRequest(.put, url: url, parameters: parameters, success: { (responseObject) in
-                if ((responseObject is NSDictionary) &&  (responseObject["message"]!) == nil){
-                    subscriber.send(value: responseObject)
+                if ((responseObject is NSDictionary) && (responseObject as! NSDictionary).object(forKey: "status") as! String == "success"){
+                    subscriber.send(value: responseObject["data"]!)
                 }else{
-                    MainThreanShowErrorMessage(responseObject)
+                    MainThreanShowErrorMessage(["message":"出现错误"] as AnyObject)
                 }
                 }, failure: { (responseError) in
                     if responseError is NSDictionary {
                         MainThreanShowErrorMessage(responseError)
                     }else{
                         MainThreanShowNetWorkError(responseError)
-//                        subscriber.send(error: responseError as! NSError)
                     }
                 subscriber.sendCompleted()
             })
@@ -124,17 +118,16 @@ class BaseNetWorke {
     func deleteUrlWithString(_ url:String, parameters:AnyObject?) -> Signal<Any, NSError> {
         return Signal.init({ (subscriber) -> Disposable? in
             self.httpRequest(.delete, url: url, parameters: parameters, success: { (responseObject) in
-                if ((responseObject is NSDictionary) && (responseObject["message"]!) == nil){
-                    subscriber.send(value: responseObject)
+                if ((responseObject is NSDictionary) && (responseObject as! NSDictionary).object(forKey: "status") as! String == "success"){
+                    subscriber.send(value: responseObject["data"]!)
                 }else{
-                    MainThreanShowErrorMessage(responseObject)
+                    MainThreanShowErrorMessage(["message":"出现错误"] as AnyObject)
                 }
                 }, failure: { (responseError) in
                     if responseError is NSDictionary {
                         MainThreanShowErrorMessage(responseError)
                     }else{
                         MainThreanShowNetWorkError(responseError)
-//                        subscriber.send(error: responseError as! NSError)
                     }
                 subscriber.sendCompleted()
             })
@@ -162,7 +155,6 @@ class BaseNetWorke {
                         }else{
                             subscriber.send(value: ["fail":"error"])
                         }
-                        //                            debugPrint(response)
                         subscriber.sendCompleted()
                     }
                 case .failure(let encodingError):
@@ -174,12 +166,6 @@ class BaseNetWorke {
             }
             return nil
         })
-    
-        // Alamofire 4
-        
-        //        Alamofire.upload(multipartFormData: <#T##(MultipartFormData) -> Void#>, usingThreshold: <#T##UInt64#>, to: <#T##URLConvertible#>, method: <#T##HTTPMethod#>, headers: <#T##HTTPHeaders?#>, encodingCompletion: { (SessionManager,.MultipartFormDataEncodingResult) in
-        //            <#code#>
-        //        })
     }
     
     
@@ -210,25 +196,13 @@ class BaseNetWorke {
                         if response.response?.statusCode == 200 || response.response?.statusCode == 201 {
                             let value = self.jsonStringToDic(response.result.value!)
                             subscriber.send(value: value)
-//                            subscriber.send(value: self.jsonStringToDic(response.result.value!))
                         }else{
                             _ = Tools.shareInstance.showMessage(KWINDOWDS(), msg: "上传失败", autoHidder: true)
                         }
                         if hud != nil {
                             Tools.shareInstance.hiddenLoading(hud: hud!)
                         }
-                        //                            debugPrint(response)
-//                        subscriber.sendCompleted()
                     })
-//                    upload.responseJSON { response in
-//                        if response.response?.statusCode == 200 || response.response?.statusCode == 201 {
-//                            subscriber.send(value: response.result.value!)
-//                        }else{
-//                            _ = Tools.shareInstance.showMessage(KWINDOWDS(), msg: "上传失败", autoHidder: true)
-//                        }
-//                        //                            debugPrint(response)
-//                        subscriber.sendCompleted()
-//                    }
                 case .failure(let encodingError):
                     print(encodingError)
                     if hud != nil {
@@ -237,7 +211,6 @@ class BaseNetWorke {
                     _ = Tools.shareInstance.showMessage(KWINDOWDS(), msg: "上传失败", autoHidder: true)
                     subscriber.sendCompleted()
                 }
-//                subscriber.sendCompleted()
             }
             return nil
         })
@@ -262,21 +235,18 @@ class BaseNetWorke {
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-//        var headers:HTTPHeaders! = type == .post ? ["Content-Type":"application/json"] : nil
-        let headers:HTTPHeaders! = nil
+        let headers = [
+            "cache-control": "no-cache",
+            "postman-token": "8b9d0d7a-7f8f-808f-4fcc-69e2519e7283"
+        ]
 
-        if parameters != nil {
-//            let signParameters:NSMutableDictionary = NSMutableDictionary.init(dictionary: parameters as! [AnyHashable : Any], copyItems: true)
-//            
-//            let date = NSDate()
-//            let timestamp = Int(date.timeIntervalSince1970 * 1000)
-//            
-//            let sign = createSign(signParameters, timestamp: "\(timestamp)", token: !UserInfoModel.isLoggedIn() ? "" : UserInfoModel.shareInstance().tails.token)
-//            
-//            headers = ["header-token":!UserInfoModel.isLoggedIn() ? "" : UserInfoModel.shareInstance().tails.token,"header-timestamp":"\(timestamp)","header-sign":sign]
+
+        Alamofire.request(url, method: methods, parameters: parameters as? [String: Any], encoding:URLEncoding.default, headers: headers).response { (response) in
+            print(response)
         }
-
-        Alamofire.request(url, method: methods, parameters: parameters as? [String: Any], encoding: methods == .post ? JSONEncoding.default : URLEncoding.default, headers: headers).responseJSON { (response) in
+        
+        
+        Alamofire.request(url, method: methods, parameters: parameters as? [String: Any], encoding:URLEncoding.default, headers: headers).responseJSON { (response) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             NetWorkingResponse.sharedInstance.showNetWorkingResPonse(response as AnyObject)

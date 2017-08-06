@@ -12,7 +12,7 @@ import SDWebImage
 
 class LoginForm: NSObject {
     var phone:String = ""
-    var code:String = ""
+    var password:String = ""
 }
 
 class LoginViewModel: BaseViewModel {
@@ -22,20 +22,13 @@ class LoginViewModel: BaseViewModel {
     }
     
     func requestLogin(_ form:LoginForm,controller:LoginViewController) {
-//        let dic = ["mobile":form.phone, "code":form.code]
-//        let url = "\(BaseUrl)\(LoginUrl)"
-//        BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: dic as AnyObject).observe { (resultDic) in
-//            if !resultDic.isCompleted {
-//                let userInfo = UserInfoModel.init(dictionary: resultDic.value as! [AnyHashable : Any])
-//                userInfo?.tails.saveOrUpdate()
-//                userInfo?.tails.userInfo.saveOrUpdate()
-//                userInfo?.saveOrUpdate()
-//                UserInfoModel.toUserInstance(userInfo)
-//                Notification(LoginStatuesChange, value: nil)
-//                controller.navigationController?.popViewController(animated: true)
-//                
-//            }
-//        }
+        let dic = ["mobile":form.phone, "password":form.password]
+        let url = "\(BaseUrl)\(LoginUrl)"
+        BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: dic as AnyObject).observe { (resultDic) in
+            if !resultDic.isCompleted {
+                
+            }
+        }
     }
     
 }

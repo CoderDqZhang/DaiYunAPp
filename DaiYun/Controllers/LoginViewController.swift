@@ -52,7 +52,7 @@ class LoginViewController: BaseViewController {
         confimCodeField.textColor = UIColor.init(hexString: App_Theme_384249_Color)
         confimCodeField.font = App_Theme_PinFan_R_14_Font
         confimCodeField.reactive.continuousTextValues.observeValues { (str) in
-            self.loginForm.code = str!
+            self.loginForm.password = str!
         }
         confimCodeField.keyboardType = .phonePad
         self.view.addSubview(confimCodeField)
