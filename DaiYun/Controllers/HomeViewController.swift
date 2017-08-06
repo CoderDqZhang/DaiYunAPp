@@ -16,11 +16,11 @@ class HomeViewController: BaseViewController {
         self.bindViewModel(viewModel: HomeViewModel(), controller: self)
         self.setUpNavigationItem()
         self.addPagerController()
+        self.setUpView()
         // Do any additional setup after loading the view.
     }
 
     func setUpNavigationItem(){
-        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "筛选", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏夹", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
     }
@@ -31,6 +31,24 @@ class HomeViewController: BaseViewController {
     
     func rightBarItemPress(){
         (self.viewModel as! HomeViewModel).rightBarItemPress()
+    }
+    
+    func setUpView(){
+        let loginBtn = UIButton.init(type: .custom)
+        loginBtn.setImage(UIImage.init(named: "login.png"), for: .normal)
+        loginBtn.frame = CGRect.init(x: SCREENWIDTH - 67, y: SCREENHEIGHT - 147, width: 42, height: 42)
+        loginBtn.reactive.controlEvents(.touchUpInside).observe { (button) in
+            if UserModel.shareInstance.getUserInfo() == nil {
+                NavigaiontPresentView(self, toController: UINavigationController.init(rootViewController: LoginViewController()))
+            }else{
+                NavigationPushView(self, toConroller: ProfileViewController())
+            }
+        }
+        self.view.addSubview(loginBtn)
+        
+        if UserModel.shareInstance.getUserInfo() == nil {
+            NavigaiontPresentView(self, toController: UINavigationController.init(rootViewController: LoginViewController()))
+        }
     }
     
     func addPagerController(){
@@ -44,9 +62,15 @@ class HomeViewController: BaseViewController {
             switch Int(index) {
             case 0:
                 self.navigationItem.title = "代母"
+                self.navigationItem.leftBarButtonItem?.isEnabled = true
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
             case 1:
+                self.navigationItem.leftBarButtonItem?.isEnabled = false
+                self.navigationItem.rightBarButtonItem?.isEnabled = false
                 self.navigationItem.title = "律师"
             default:
+                self.navigationItem.leftBarButtonItem?.isEnabled = false
+                self.navigationItem.rightBarButtonItem?.isEnabled = false
                 self.navigationItem.title = "套餐"
             }
         }

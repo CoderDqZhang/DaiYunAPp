@@ -1,47 +1,24 @@
+
 //
-//  MotherViewModel.swift
+//  DoctorInfoViewModel.swift
 //  DaiYun
 //
-//  Created by Zhang on 01/08/2017.
+//  Created by Zhang on 06/08/2017.
 //  Copyright © 2017 Zhang. All rights reserved.
 //
 
 import UIKit
 
-class MotherViewModel: BaseViewModel {
+class DoctorInfoViewModel: BaseViewModel {
 
-    var motherController:MotherViewController!
+    var docInfoViewController:DoctorInfoViewController!
     var models = NSMutableArray.init()
     override init() {
         super.init()
-        self.requestMothModel()
-    }
-    
-    //MARK: CollectionViewCellSetData
-    func collectionViewMotherCollectionViewCellSetData(_ indexPath:IndexPath, cell:MotherCollectionViewCell) {
-        cell.cellSetData(model: MotherModel.init(fromDictionary:  self.models.object(at: indexPath.row) as! NSDictionary))
-    }
-    
-    func collectionViewDidSelctor(_ indexPath:IndexPath) {
-        let toController = MotherInfoViewController()
-        toController.model = MotherModel.init(fromDictionary:  self.models.object(at: indexPath.row) as! NSDictionary)
-        let controller = self.motherController?.parent as! HomePageViewController
-        controller.viewModel.pushViewController(toController)
-    }
-    
-    //MARK: RequestUrl 
-    func requestMothModel(){
-        let url = "\(BaseUrl)\(MotherListUrl)"
-        BaseNetWorke.sharedInstance.getUrlWithString(url, parameters: nil).observe { (resultDic) in
-            if !resultDic.isCompleted {
-                self.models = NSMutableArray.init(array: resultDic.value as! [Any])
-                self.motherController.collectView.reloadData()
-            }
-        }
     }
 }
 
-extension MotherViewModel : UICollectionViewDataSource {
+extension DoctorInfoViewModel : UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -55,18 +32,18 @@ extension MotherViewModel : UICollectionViewDataSource {
     {
         let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: MotherCollectionViewCell.description(), for: indexPath)
         collectionViewCell.backgroundColor = UIColor.init(hexString: App_Theme_FFFFFF_Color)
-        self.collectionViewMotherCollectionViewCellSetData(indexPath, cell: collectionViewCell as! MotherCollectionViewCell)
+//        self.collectionViewMotherCollectionViewCellSetData(indexPath, cell: collectionViewCell as! MotherCollectionViewCell)
         return collectionViewCell
     }
 }
 
-extension MotherViewModel : UICollectionViewDelegate {
+extension DoctorInfoViewModel : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.collectionViewDidSelctor(indexPath)
+        
     }
 }
 
-extension MotherViewModel : UICollectionViewDelegateFlowLayout {
+extension DoctorInfoViewModel : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: (SCREENWIDTH - 20) / 2, height: (SCREENWIDTH - 20) / 2 + 60)
     }

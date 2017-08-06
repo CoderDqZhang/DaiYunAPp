@@ -62,13 +62,13 @@ class MotherCollectionViewCell: UICollectionViewCell {
     }
     
     func cellSetData(model:MotherModel){
-        ImageViewManager.shareInstance.sd_imageView(url: "\(BaseUrl)\(model.dmPic)", imageView: image) { (image, error, cacheType, url) in
+        ImageViewManager.shareInstance.sd_imageView(url: "\(BaseUrl)\((model.dmPic)!)", imageView: image) { (image, error, cacheType, url) in
             
         }
         namelabel.text = model.dmName
-        heightlabel.text = "身高：\(model.dmHeight)"
-        weightlabel.text = "体重：\(model.dmWeight)"
-        explabel.text = "经验：\(model.dmExperiencde)"
+        heightlabel.text = "身高：\((model.dmHeight)!)cm"
+        weightlabel.text = "体重：\((model.dmWeight)!)kg"
+        explabel.text = "经验：\((model.dmExperiencde)!)"
         let marriage = model.dmMiscarriage == "1" ? "未婚" : "已婚"
         marriagelabel.text = "婚姻：\(marriage)"
     }

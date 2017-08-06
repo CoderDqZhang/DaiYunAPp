@@ -48,7 +48,7 @@ class LoginViewController: BaseViewController {
         self.view.addSubview(lineLabel1)
         
         confimCodeField = self.createTextFiled(CGRect.zero)
-        confimCodeField.placeholder = "验证码"
+        confimCodeField.placeholder = "请输入密码"
         confimCodeField.textColor = UIColor.init(hexString: App_Theme_384249_Color)
         confimCodeField.font = App_Theme_PinFan_R_14_Font
         confimCodeField.reactive.continuousTextValues.observeValues { (str) in
@@ -61,10 +61,10 @@ class LoginViewController: BaseViewController {
         phontTextField.tag = 1
         phontTextField.textColor = UIColor.init(hexString: App_Theme_384249_Color)
         phontTextField.keyboardType = .phonePad
-        phontTextField.placeholder = "请输入手机号"
+        phontTextField.placeholder = "请输入账号"
         phontTextField.font = App_Theme_PinFan_R_14_Font
         phontTextField.reactive.continuousTextValues.observeValues { (action) in
-            self.loginForm.phone = action!
+            self.loginForm.username = action!
         }
         self.view.addSubview(phontTextField)
         

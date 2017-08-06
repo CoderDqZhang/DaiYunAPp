@@ -14,6 +14,5 @@
 #import "UIViewController+DismissKeyboard.h"
 #import "UIViewController+hideExcessLine.h"
 #import "TYTabButtonPagerController.h"
-#import "JKDBModel.h"
 
 #endif /* DaiYun_Bridging_Header_h */

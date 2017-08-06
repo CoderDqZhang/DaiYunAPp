@@ -121,19 +121,26 @@ class GloableLableDetailLabelImageCell : UITableViewCell {
     
     func setUpView(){
         titleLable = UILabel.init()
+        titleLable.font = App_Theme_PinFan_R_15_Font
+        titleLable.textColor = UIColor.init(hexString: App_Theme_384249_Color)
         self.contentView.addSubview(titleLable)
         
         detailLabel = UILabel.init()
+        detailLabel.font = App_Theme_PinFan_R_15_Font
+        detailLabel.textColor = UIColor.init(hexString: App_Theme_FB718C_Color)
         detailLabel.textAlignment = .right
         self.contentView.addSubview(detailLabel)
         
         self.updateConstraints()
     }
     
-    func setCellData(text:String, detailText:String?){
+    func setCellData(text:String, detailText:String?,detailTextColor:UIColor?){
         titleLable.text = text
         detailLabel.text = detailText
         
+        if detailTextColor != nil {
+            detailLabel.textColor = detailTextColor
+        }
         self.contentView.updateConstraintsIfNeeded()
     }
     
@@ -153,7 +160,7 @@ class GloableLableDetailLabelImageCell : UITableViewCell {
                 make.left.equalTo(self.titleLable.snp.right).offset(15)
                 make.centerY.equalTo(self.contentView.snp.centerY).offset(0)
                 make.height.equalTo(15)
-                make.right.equalTo(self.contentView.snp.right).offset(0)
+                make.right.equalTo(self.contentView.snp.right).offset(-15)
             }
             didMakeConstraints = true
         }

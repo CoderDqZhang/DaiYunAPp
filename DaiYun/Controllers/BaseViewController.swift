@@ -38,10 +38,10 @@ class BaseViewController: UIViewController {
             make.right.equalTo((controller?.view.snp.right)!).offset(0)
             make.bottom.equalTo((controller?.view.snp.bottom)!).offset(0)
         }
+        
     }
     
     func bindViewModel(viewModel:BaseViewModel?, controller: BaseViewController?){
-        
         self.viewModel = viewModel
         viewModel?.controller = controller
     }

@@ -11,7 +11,7 @@ import MJExtension
 import SDWebImage
 
 class LoginForm: NSObject {
-    var phone:String = ""
+    var username:String = ""
     var password:String = ""
 }
 
@@ -22,11 +22,16 @@ class LoginViewModel: BaseViewModel {
     }
     
     func requestLogin(_ form:LoginForm,controller:LoginViewController) {
-        let dic = ["mobile":form.phone, "password":form.password]
+        let dic = ["username":form.username, "password":form.password]
         let url = "\(BaseUrl)\(LoginUrl)"
         BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: dic as AnyObject).observe { (resultDic) in
             if !resultDic.isCompleted {
-                
+                UserModel.shareInstance = UserModel.init(fromDictionary: resultDic.value as! NSDictionary)
+                if UserModel.shareInstance.saveUserInfo(model: UserModel.shareInstance) {
+                    self.controller?.dismiss(animated: true, completion: { 
+                        
+                    })
+                }
             }
         }
     }

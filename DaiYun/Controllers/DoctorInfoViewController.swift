@@ -1,23 +1,28 @@
 //
-//  MotherViewController.swift
+//  DoctorInfoViewController.swift
 //  DaiYun
 //
-//  Created by Zhang on 01/08/2017.
+//  Created by Zhang on 06/08/2017.
 //  Copyright © 2017 Zhang. All rights reserved.
 //
 
 import UIKit
 
-class MotherViewController: BaseViewController {
+class DoctorInfoViewController: BaseViewController {
 
     var collectView:UICollectionView!
-    var motherViewModel:MotherViewModel = MotherViewModel.init()
+    var docViewModel:DoctorInfoViewModel = DoctorInfoViewModel.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
         self.bindViewModelLogic()
+        self.setUpNavigationItem()
         // Do any additional setup after loading the view.
+    }
+    
+    func setUpNavigationItem(){
+        self.navigationItem.title = "医生信息"
     }
     
     func setUpView(){
@@ -26,15 +31,15 @@ class MotherViewController: BaseViewController {
         collectView.backgroundColor = UIColor.init(hexString: App_Theme_F6F7FA_Color)
         collectView.register(MotherCollectionViewCell.self, forCellWithReuseIdentifier: MotherCollectionViewCell.description())
         
-        collectView.delegate = motherViewModel
-        collectView.dataSource = motherViewModel
+        collectView.delegate = docViewModel
+        collectView.dataSource = docViewModel
         self.view.addSubview(collectView)
     }
-
-    func bindViewModelLogic(){
-        self.motherViewModel.motherController = self
-    }
     
+    func bindViewModelLogic(){
+        self.docViewModel.docInfoViewController = self
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

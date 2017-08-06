@@ -8,7 +8,10 @@
 
 import UIKit
 
-class UserModel: JKDBModel {
+let kEncodedObjectPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as String
+let userFile = kEncodedObjectPath.appending("/userInfo")
+
+class UserModel: NSObject, NSCoding {
     var daoqiTime : String!
     var endloginTime : String!
     var id : String!
@@ -19,6 +22,38 @@ class UserModel: JKDBModel {
     var zhuceTime : String!
     
     
+    static var shareInstance = UserModel()
+    
+    override init() {
+        
+    }
+    
+    func saveUserInfo(model:UserModel) ->Bool{
+        let manager = FileManager.default
+        if !manager.fileExists(atPath: userFile) {
+            do {
+                try manager.createDirectory(atPath: userFile, withIntermediateDirectories: true, attributes: nil)
+                let file = userFile.appendingPathComponent("userInfo.data")
+                return NSKeyedArchiver.archiveRootObject(model, toFile: file)
+            } catch {
+                print("创建失败")
+                return false
+            }
+        }else{
+            let file = userFile.appendingPathComponent("userInfo.data")
+            return NSKeyedArchiver.archiveRootObject(model, toFile: file)
+        }
+        
+    }
+    
+    func getUserInfo() ->UserModel? {
+        let file = userFile.appendingPathComponent("userInfo.data")
+        let userInfo = NSKeyedUnarchiver.unarchiveObject(withFile: file)
+        if userInfo != nil {
+            UserModel.shareInstance = userInfo as! UserModel
+        }
+        return userInfo as? UserModel
+    }
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
