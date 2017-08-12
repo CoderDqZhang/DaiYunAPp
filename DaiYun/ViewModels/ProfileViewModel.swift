@@ -10,10 +10,15 @@ import UIKit
 
 class ProfileViewModel: BaseViewModel {
 
-    let sessionNumberRow = [1,2,2,1,3]
+    let sessionNumberRow = [1,2,2,1,3,1]
     let cellTextLabelStrs = [["当前状态","匹配信息"],["信托账户","签署文件"],["医生信息"],["常见问题","联系我们","关于我们"]]
     override init() {
         
+    }
+    
+    func logOutPress(){
+        UserModel.shareInstance.logOut()
+        NavigaiontPresentView(self.controller!, toController: UINavigationController.init(rootViewController: LoginViewController()))
     }
     
     //MARK: TableViewCellSetData
@@ -28,6 +33,7 @@ class ProfileViewModel: BaseViewModel {
     func tableViewProfileTableViewCellSetData(_ indexPath:IndexPath, cell:ProfileTableViewCell) {
         cell.cellSetData(model: UserModel.shareInstance)
     }
+    
     
     func tableViewDidSelect(_ indexPath:IndexPath) {
         switch indexPath.section {
@@ -88,7 +94,7 @@ extension ProfileViewModel: UITableViewDelegate {
 
 extension ProfileViewModel: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,6 +106,13 @@ extension ProfileViewModel: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.description(), for: indexPath)
             self.tableViewProfileTableViewCellSetData(indexPath, cell: cell as! ProfileTableViewCell)
+            return cell
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: LogoutTableViewCell.description(), for: indexPath)
+            let button = CustomButton.init(frame: CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: 50), title: "退出登录", tag: 1, titleFont: App_Theme_PinFan_R_15_Font!, type: CustomButtonType.withBackBoarder, pressClouse: { (tag) in
+                self.logOutPress()
+            })
+            cell.contentView.addSubview(button)
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: GloableLableDetailLabelImageCell.description(), for: indexPath)

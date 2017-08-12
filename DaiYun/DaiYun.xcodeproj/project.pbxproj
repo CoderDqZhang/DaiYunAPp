@@ -22,6 +22,7 @@
 		1F63C4861F2DCDBA0058A997 /* UIViewController+hideExcessLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F63C4851F2DCDBA0058A997 /* UIViewController+hideExcessLine.m */; };
 		1F63C4891F2DCDC40058A997 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F63C4881F2DCDC40058A997 /* UIViewController+DismissKeyboard.m */; };
 		1F63C48B1F2DCF3A0058A997 /* TextField+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63C48A1F2DCF3A0058A997 /* TextField+Extentions.swift */; };
+		1FCCD5E81F3ABD600073ED58 /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCD5E71F3ABD600073ED58 /* LogoutTableViewCell.swift */; };
 		1FE36B051F306C4C00E895C7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B041F306C4B00E895C7 /* HomePageViewController.swift */; };
 		1FE36B111F306C7900E895C7 /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B091F306C7900E895C7 /* TYPagerController.m */; };
 		1FE36B121F306C7900E895C7 /* TYTabButtonPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B0B1F306C7900E895C7 /* TYTabButtonPagerController.m */; };
@@ -65,6 +66,9 @@
 		1FE36B711F375BD300E895C7 /* MotherInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B701F375BD300E895C7 /* MotherInfoTableViewCell.swift */; };
 		1FE36B731F375D3500E895C7 /* MotherInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B721F375D3500E895C7 /* MotherInfoViewController.swift */; };
 		1FE36B751F375D5A00E895C7 /* MotherInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B741F375D5A00E895C7 /* MotherInfoViewModel.swift */; };
+		1FF805A31F3D547300237FDF /* CollectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF805A21F3D547300237FDF /* CollectModel.swift */; };
+		1FF805C81F3EBC8200237FDF /* PackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF805C71F3EBC8200237FDF /* PackageModel.swift */; };
+		1FF805CA1F3EBEB900237FDF /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF805C91F3EBEB900237FDF /* PackageTableViewCell.swift */; };
 		1FFA270E1F25EAA80051E228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA270D1F25EAA80051E228 /* AppDelegate.swift */; };
 		1FFA27101F25EAA80051E228 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA270F1F25EAA80051E228 /* ViewController.swift */; };
 		1FFA27131F25EAA80051E228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27111F25EAA80051E228 /* Main.storyboard */; };
@@ -102,6 +106,7 @@
 		1F63C4871F2DCDC40058A997 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
 		1F63C4881F2DCDC40058A997 /* UIViewController+DismissKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DismissKeyboard.m"; sourceTree = "<group>"; };
 		1F63C48A1F2DCF3A0058A997 /* TextField+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Extentions.swift"; sourceTree = "<group>"; };
+		1FCCD5E71F3ABD600073ED58 /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		1FE36B041F306C4B00E895C7 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		1FE36B081F306C7900E895C7 /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
 		1FE36B091F306C7900E895C7 /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
@@ -150,6 +155,9 @@
 		1FE36B701F375BD300E895C7 /* MotherInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotherInfoTableViewCell.swift; path = ../Controllers/MotherInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1FE36B721F375D3500E895C7 /* MotherInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotherInfoViewController.swift; sourceTree = "<group>"; };
 		1FE36B741F375D5A00E895C7 /* MotherInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotherInfoViewModel.swift; sourceTree = "<group>"; };
+		1FF805A21F3D547300237FDF /* CollectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectModel.swift; sourceTree = "<group>"; };
+		1FF805C71F3EBC8200237FDF /* PackageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageModel.swift; sourceTree = "<group>"; };
+		1FF805C91F3EBEB900237FDF /* PackageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
 		1FFA270A1F25EAA80051E228 /* DaiYun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiYun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFA270D1F25EAA80051E228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FFA270F1F25EAA80051E228 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +297,7 @@
 				1FE36B701F375BD300E895C7 /* MotherInfoTableViewCell.swift */,
 				1FE36B321F30739500E895C7 /* FilterTableViewCell.swift */,
 				1FE36B361F35A44500E895C7 /* MotherCollectionViewCell.swift */,
+				1FF805C91F3EBEB900237FDF /* PackageTableViewCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -305,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				1FE36B431F36EC3100E895C7 /* MotherModel.swift */,
+				1FF805A21F3D547300237FDF /* CollectModel.swift */,
+				1FF805C71F3EBC8200237FDF /* PackageModel.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -345,6 +356,7 @@
 			children = (
 				1FE36B4E1F374C1C00E895C7 /* ProfileTableViewCell.swift */,
 				1FE36B6E1F37584100E895C7 /* NormalQuestTableViewCell.swift */,
+				1FCCD5E71F3ABD600073ED58 /* LogoutTableViewCell.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -653,10 +665,12 @@
 				1FFA27311F25F6190051E228 /* String+Size.swift in Sources */,
 				1FE36B2A1F3072F600E895C7 /* LikeViewModel.swift in Sources */,
 				1FE36B731F375D3500E895C7 /* MotherInfoViewController.swift in Sources */,
+				1FF805C81F3EBC8200237FDF /* PackageModel.swift in Sources */,
 				1FE36B3A1F36E70E00E895C7 /* UserModel.swift in Sources */,
 				1F63C47A1F2DCC060058A997 /* AppThemeTool.swift in Sources */,
 				1F63C4761F2DCBD00058A997 /* LoginViewModel.swift in Sources */,
 				1FE36B111F306C7900E895C7 /* TYPagerController.m in Sources */,
+				1FF805A31F3D547300237FDF /* CollectModel.swift in Sources */,
 				1F63C46C1F2DCA890058A997 /* BaseViewModel.swift in Sources */,
 				1FE36B211F306E8800E895C7 /* MealViewController.swift in Sources */,
 				1FE36B2E1F30731100E895C7 /* LawViewModel.swift in Sources */,
@@ -670,11 +684,13 @@
 				1FE36B4C1F374B8100E895C7 /* ProfileViewModel.swift in Sources */,
 				1F63C47F1F2DCD870058A997 /* GloableView.swift in Sources */,
 				1FE36B201F306E8800E895C7 /* LawViewController.swift in Sources */,
+				1FCCD5E81F3ABD600073ED58 /* LogoutTableViewCell.swift in Sources */,
 				1FE36B2C1F30730300E895C7 /* MotherViewModel.swift in Sources */,
 				1FE36B611F3754C400E895C7 /* MatchingInfoViewModel.swift in Sources */,
 				1FE36B141F306C7900E895C7 /* TYTabTitleViewCell.m in Sources */,
 				1FE36B5F1F37536D00E895C7 /* AboutUsViewController.swift in Sources */,
 				1F63C4681F2DCA630058A997 /* HomeViewController.swift in Sources */,
+				1FF805CA1F3EBEB900237FDF /* PackageTableViewCell.swift in Sources */,
 				1FE36B121F306C7900E895C7 /* TYTabButtonPagerController.m in Sources */,
 				1FE36B751F375D5A00E895C7 /* MotherInfoViewModel.swift in Sources */,
 				1F63C4661F2DCA510058A997 /* BaseViewController.swift in Sources */,

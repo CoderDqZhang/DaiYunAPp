@@ -22,7 +22,7 @@ class HomeViewController: BaseViewController {
 
     func setUpNavigationItem(){
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "筛选", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏夹", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏夹", style: .plain, target: self, action: #selector(HomeViewController.rightBarItemPress))
     }
     
     func leftBarItemPress(){

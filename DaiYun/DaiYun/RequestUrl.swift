@@ -14,3 +14,12 @@ let BaseUrl = "http://dm.chinacion.cn/"
 let LoginUrl = "index.php?g=Apps&m=Login&a=login"
 let MotherListUrl = "index.php?g=Apps&m=portal&a=daimu_list"
 let MotherDetailUrl = "index.php?g=Apps&m=portal&a=daimu_detail"
+
+let MotherCollectStatusUrl = "index.php?g=Apps&m=portal&a=get_collection_status"
+let MotherCollectAddUrl = "index.php?g=Apps&m=portal&a=add_collection"
+let MotherCollectDeleteUrl = "index.php?g=Apps&m=portal&a=del_collection"
+let MotherCollectsUrl = "index.php?g=Apps&m=portal&a=user_daimu_favorites"
+
+let PackageList = "index.php?g=Apps&m=portal&a=get_package_list"
+let PackageDesc = "index.php?g=Apps&m=portal&a=get_package_detail"
+let PackageDetailList = "index.php?g=Apps&m=portal&a=get_package_detail"

@@ -28,9 +28,11 @@ class LoginViewModel: BaseViewModel {
             if !resultDic.isCompleted {
                 UserModel.shareInstance = UserModel.init(fromDictionary: resultDic.value as! NSDictionary)
                 if UserModel.shareInstance.saveUserInfo(model: UserModel.shareInstance) {
-                    self.controller?.dismiss(animated: true, completion: { 
-                        
-                    })
+                    if UserModel.shareInstance.daoqiTime == "4102329600" {
+                        NavigaiontPresentView(self.controller!, toController: UINavigationController.init(rootViewController: ProfileViewController()))
+                    }else{
+                        NavigaiontPresentView(self.controller!, toController: UINavigationController.init(rootViewController: HomeViewController()))
+                    }
                 }
             }
         }

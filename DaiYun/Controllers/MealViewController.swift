@@ -12,7 +12,8 @@ class MealViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.bindViewModel(viewModel: MealViewModel(), controller: self)
+        self.setUpTableView(style: .plain, cells: [PackageTableViewCell.self], controller: self)
         // Do any additional setup after loading the view.
     }
 

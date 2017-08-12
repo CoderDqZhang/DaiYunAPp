@@ -20,7 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppleThemeTool.setUpToolBarColor()
         AppleThemeTool.setUpKeyBoardManager()
         
-        self.window?.rootViewController = UINavigationController.init(rootViewController: HomeViewController())
+        if UserModel.shareInstance.getUserInfo() != nil {
+            if UserModel.shareInstance.daoqiTime == "4102329600" {
+                self.window?.rootViewController = UINavigationController.init(rootViewController: ProfileViewController())
+            }else{
+                self.window?.rootViewController = UINavigationController.init(rootViewController: HomeViewController())
+            }
+        }else{
+            self.window?.rootViewController = UINavigationController.init(rootViewController: LoginViewController())
+        }
         self.window?.makeKeyAndVisible()
         return true
     }

@@ -14,24 +14,26 @@ class MotherInfoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.init(hexString: App_Theme_FB718C_Color)
         self.bindViewModel(viewModel: MotherInfoViewModel(), controller: self)
         self.setUpTableView(style: .grouped, cells: [MotherInfoTableViewCell.self,GloableLableDetailLabelImageCell.self], controller: self)
-        self.setUpNavigationItem()
         self.bindeLogicViewModel()
         // Do any additional setup after loading the view.
     }
     
-    func setUpNavigationItem(){
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏", style: .plain, target: self, action: #selector(MotherInfoViewController.rightBarItemPress))
+    func setUpNavigationItem(collect:Bool){
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: collect ? "collection_select.png" : "collection_normal.png"), style: .plain, target: self, action: #selector(MotherInfoViewController.rightBarItemPress))
     }
     
     func rightBarItemPress(){
-        
+        (self.viewModel as! MotherInfoViewModel).rightBarItemPress()
     }
     
     func bindeLogicViewModel(){
         (self.viewModel as! MotherInfoViewModel).model = self.model
         (self.viewModel as! MotherInfoViewModel).genderData()
+        (self.viewModel as! MotherInfoViewModel).collectionStatus()
+
     }
 
     override func didReceiveMemoryWarning() {

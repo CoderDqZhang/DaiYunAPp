@@ -54,6 +54,16 @@ class UserModel: NSObject, NSCoding {
         }
         return userInfo as? UserModel
     }
+    
+    func logOut(){
+        let manager = FileManager.default
+        if !manager.fileExists(atPath: userFile) {
+            do {
+                try manager.removeItem(atPath: userFile)
+            } catch {
+            }
+        }
+    }
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */

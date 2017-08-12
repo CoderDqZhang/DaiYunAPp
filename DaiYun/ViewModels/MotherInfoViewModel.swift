@@ -15,8 +15,15 @@ class MotherInfoViewModel: BaseViewModel {
     var sessionTitles = ["基本信息","代孕信息","生育史"]
     var detailStrs = NSMutableArray.init()
     var model:MotherModel!
+    var collectModel:CollectModel!
+    
     override init() {
         super.init()
+    }
+    
+    
+    func rightBarItemPress(){
+        self.collectionStatus()
     }
     
     func genderData(){
@@ -54,6 +61,37 @@ class MotherInfoViewModel: BaseViewModel {
     
     func tableViewDidSelect(_ indexPath:IndexPath){
         
+    }
+    
+    //MARK: NetWorkRequest
+    func collectionStatus(){
+        var url = ""
+        if self.collectModel != nil {
+            if self.collectModel.collectionType == "1" {
+                url = "\(BaseUrl)\(MotherCollectDeleteUrl)"
+            }else{
+                url = "\(BaseUrl)\(MotherCollectAddUrl)"
+            }
+        }else{
+           url = "\(BaseUrl)\(MotherCollectStatusUrl)"
+        }
+        
+        let parameters = ["uid":UserModel.shareInstance.id,
+                          "dmid":self.model.dmId]
+        BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
+            if !resultDic.isCompleted {
+                if self.collectModel != nil {
+                    if self.collectModel.collectionType == "1" {
+                        self.collectModel.collectionType = "2"
+                    }else{
+                        self.collectModel.collectionType = "1"
+                    }
+                }else{
+                    self.collectModel = CollectModel.init(fromDictionary: resultDic.value as! NSDictionary)
+                }
+                (self.controller as! MotherInfoViewController).setUpNavigationItem(collect: self.collectModel.collectionType == "1" ? true : false)
+            }
+        }
     }
 }
 

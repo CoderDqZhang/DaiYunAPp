@@ -13,7 +13,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel(viewModel: ProfileViewModel(), controller: self)
-        self.setUpTableView(style: .grouped, cells: [GloableLableDetailLabelImageCell.self, ProfileTableViewCell.self], controller: self)
+        self.setUpTableView(style: .grouped, cells: [GloableLableDetailLabelImageCell.self, ProfileTableViewCell.self, LogoutTableViewCell.self], controller: self)
         self.setUpNavigationItem()
         // Do any additional setup after loading the view.
     }
