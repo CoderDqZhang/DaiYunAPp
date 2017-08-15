@@ -1,23 +1,18 @@
 //
-//  FilterViewController.swift
+//  LogViewController.swift
 //  DaiYun
 //
-//  Created by Zhang on 01/08/2017.
+//  Created by Zhang on 15/08/2017.
 //  Copyright © 2017 Zhang. All rights reserved.
 //
 
 import UIKit
 
-typealias CommitPressClouse = (_ array:NSMutableArray) ->Void
+class LogViewController: BaseViewController {
 
-class FilterViewController: BaseViewController {
-
-    var commitPressClouse:CommitPressClouse!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationItemBack()
-        self.bindViewModel(viewModel: FilterViewModel(), controller: self)
-        self.setUpTableView(style: .grouped, cells: [GloableNoneCell.self,FilterTableViewCell.self], controller: self)
+
         // Do any additional setup after loading the view.
     }
 

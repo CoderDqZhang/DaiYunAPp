@@ -32,7 +32,7 @@ class MotherInfoViewController: BaseViewController {
     func bindeLogicViewModel(){
         (self.viewModel as! MotherInfoViewModel).model = self.model
         (self.viewModel as! MotherInfoViewModel).genderData()
-        (self.viewModel as! MotherInfoViewModel).collectionStatus()
+        (self.viewModel as! MotherInfoViewModel).collectionGetStatus()
 
     }
 

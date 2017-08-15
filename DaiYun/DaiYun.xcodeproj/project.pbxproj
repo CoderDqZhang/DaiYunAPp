@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F44C1411F42A0F5008BCD80 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C1401F42A0F5008BCD80 /* LogViewController.swift */; };
 		1F63C4661F2DCA510058A997 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63C4651F2DCA510058A997 /* BaseViewController.swift */; };
 		1F63C4681F2DCA630058A997 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63C4671F2DCA630058A997 /* HomeViewController.swift */; };
 		1F63C46C1F2DCA890058A997 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63C46B1F2DCA890058A997 /* BaseViewModel.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F44C1401F42A0F5008BCD80 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		1F63C4651F2DCA510058A997 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1F63C4671F2DCA630058A997 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1F63C46B1F2DCA890058A997 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				1FE36B541F37531500E895C7 /* ConfideViewController.swift */,
 				1FE36B561F37533700E895C7 /* SignFileViewController.swift */,
 				1FE36B581F37534500E895C7 /* DoctorInfoViewController.swift */,
+				1F44C1401F42A0F5008BCD80 /* LogViewController.swift */,
 				1FE36B5A1F37535300E895C7 /* NormalQuesViewController.swift */,
 				1FE36B5C1F37536100E895C7 /* ContactUsViewController.swift */,
 				1FE36B5E1F37536D00E895C7 /* AboutUsViewController.swift */,
@@ -684,6 +687,7 @@
 				1FE36B4C1F374B8100E895C7 /* ProfileViewModel.swift in Sources */,
 				1F63C47F1F2DCD870058A997 /* GloableView.swift in Sources */,
 				1FE36B201F306E8800E895C7 /* LawViewController.swift in Sources */,
+				1F44C1411F42A0F5008BCD80 /* LogViewController.swift in Sources */,
 				1FCCD5E81F3ABD600073ED58 /* LogoutTableViewCell.swift in Sources */,
 				1FE36B2C1F30730300E895C7 /* MotherViewModel.swift in Sources */,
 				1FE36B611F3754C400E895C7 /* MatchingInfoViewModel.swift in Sources */,

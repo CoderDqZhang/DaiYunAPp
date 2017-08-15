@@ -10,8 +10,8 @@ import UIKit
 
 class ProfileViewModel: BaseViewModel {
 
-    let sessionNumberRow = [1,2,2,1,3,1]
-    let cellTextLabelStrs = [["当前状态","匹配信息"],["信托账户","签署文件"],["医生信息"],["常见问题","联系我们","关于我们"]]
+    let sessionNumberRow = [1,2,2,1,4,1]
+    let cellTextLabelStrs = [["当前状态","匹配信息"],["信托账户","签署文件"],["医生信息"],["常见问题","会客室","查看日志","关于我们"]]
     override init() {
         
     }
@@ -61,6 +61,8 @@ class ProfileViewModel: BaseViewModel {
                 NavigationPushView(self.controller!, toConroller: NormalQuesViewController())
             case 1:
                 NavigationPushView(self.controller!, toConroller: ContactUsViewController())
+            case 2:
+                NavigationPushView(self.controller!, toConroller: ContactUsViewController())
             default:
                 NavigationPushView(self.controller!, toConroller: AboutUsViewController())
             }
@@ -79,6 +81,9 @@ extension ProfileViewModel: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 4 {
+            return 20
+        }
         return 10
     }
     

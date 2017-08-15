@@ -11,11 +11,16 @@ import UIKit
 class HomeViewModel: BaseViewModel {
 
     override init() {
-        
+        super.init()
     }
     
     func leftBarItemPress() {
-        NavigationPushView(self.controller!, toConroller: FilterViewController())
+        let filterController = FilterViewController()
+        filterController.commitPressClouse = { array in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotiFicationPostName), object: array)
+            UserDefaultsSetSynchronize(array, key: "FilterArray")
+        }
+        NavigationPushView(self.controller!, toConroller: filterController)
     }
     
     func rightBarItemPress() {

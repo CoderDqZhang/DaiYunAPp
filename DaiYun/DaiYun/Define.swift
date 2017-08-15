@@ -23,16 +23,7 @@ let IPHONE6P = SwifterSwift.screenWidth == 344 ? true:false
 let SCREENWIDTH = SwifterSwift.screenWidth
 let SCREENHEIGHT = SwifterSwift.screenHeight
 
-let AnimationTime = 0.3
-
-let TitleLineSpace:Float = 3.0
-
-let BookLargerSize = CGSize.init(width: 102, height: 144)
-
-let BookLargerMidSize = CGSize.init(width: 51, height: 72)
-
-let BookLargerSmaSize = CGSize.init(width: 17, height: 24)
-
+let NotiFicationPostName = "ChangeFillterValue"
 
 enum FollowAndFancsType {
     case Following

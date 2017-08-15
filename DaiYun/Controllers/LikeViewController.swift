@@ -22,7 +22,7 @@ class LikeViewController: BaseViewController {
     
     func setUpView(){
         let collectionViewLayout = UICollectionViewFlowLayout.init()
-        collectView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT - 100), collectionViewLayout: collectionViewLayout)
+        collectView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT), collectionViewLayout: collectionViewLayout)
         collectView.backgroundColor = UIColor.init(hexString: App_Theme_F6F7FA_Color)
         collectView.register(MotherCollectionViewCell.self, forCellWithReuseIdentifier: MotherCollectionViewCell.description())
         

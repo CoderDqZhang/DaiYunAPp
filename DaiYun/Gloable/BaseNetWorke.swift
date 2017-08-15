@@ -65,9 +65,17 @@ class BaseNetWorke {
         return Signal.init({ (subscriber) -> Disposable? in
             self.httpRequest(.post, url: url, parameters: parameters, success: { (responseObject) in
                 if ((responseObject is NSDictionary) && (responseObject as! NSDictionary).object(forKey: "status") as! String == "success"){
-                    subscriber.send(value: responseObject["data"]!)
+                    if url == "\(BaseUrl)\(MotherCollectDeleteUrl)" || url == "\(BaseUrl)\(MotherCollectAddUrl)" || url == "\(BaseUrl)\(MotherCollectStatusUrl)" {
+                        subscriber.send(value: responseObject)
+                    }else{
+                        subscriber.send(value: responseObject["data"]! ?? "")
+                    }
                 }else{
-                    MainThreanShowErrorMessage(["message":"出现错误"] as AnyObject)
+                    if url == "\(BaseUrl)\(MotherCollectDeleteUrl)" || url == "\(BaseUrl)\(MotherCollectAddUrl)" || url == "\(BaseUrl)\(MotherCollectStatusUrl)" {
+                        subscriber.send(value: responseObject)
+                    }else{
+                        MainThreanShowErrorMessage(["message":"出现错误"] as AnyObject)
+                    }
                 }
                 subscriber.sendCompleted()
                 }, failure: { (responseError) in

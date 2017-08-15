@@ -14,15 +14,25 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel(viewModel: HomeViewModel(), controller: self)
-        self.setUpNavigationItem()
+        self.setUpNavigationItem(index: 0)
         self.addPagerController()
         self.setUpView()
         // Do any additional setup after loading the view.
     }
 
-    func setUpNavigationItem(){
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "筛选", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏夹", style: .plain, target: self, action: #selector(HomeViewController.rightBarItemPress))
+    func setUpNavigationItem(index:Int){
+        switch index {
+        case 0:
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "筛选", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "收藏夹", style: .plain, target: self, action: #selector(HomeViewController.rightBarItemPress))
+        case 1:
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: self, action: #selector(HomeViewController.rightBarItemPress))
+        default:
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: self, action: #selector(HomeViewController.leftBarItemPress))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: self, action: #selector(HomeViewController.rightBarItemPress))
+        }
+        
     }
     
     func leftBarItemPress(){
@@ -38,11 +48,8 @@ class HomeViewController: BaseViewController {
         loginBtn.setImage(UIImage.init(named: "login.png"), for: .normal)
         loginBtn.frame = CGRect.init(x: SCREENWIDTH - 67, y: SCREENHEIGHT - 147, width: 42, height: 42)
         loginBtn.reactive.controlEvents(.touchUpInside).observe { (button) in
-            if UserModel.shareInstance.getUserInfo() == nil {
-                NavigaiontPresentView(self, toController: UINavigationController.init(rootViewController: LoginViewController()))
-            }else{
-                NavigationPushView(self, toConroller: ProfileViewController())
-            }
+            UserModel.shareInstance.logOut()
+            NavigaiontPresentView(self, toController: UINavigationController.init(rootViewController: LoginViewController()))
         }
         self.view.addSubview(loginBtn)
         
@@ -59,6 +66,7 @@ class HomeViewController: BaseViewController {
         homePageViewController.hidesBottomBarWhenPushed = true
         homePageViewController.view.frame = CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT)
         homePageViewController.selectIndexClouse = { index in
+            self.setUpNavigationItem(index: index)
             switch Int(index) {
             case 0:
                 self.navigationItem.title = "代母"

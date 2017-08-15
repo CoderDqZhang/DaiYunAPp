@@ -16,6 +16,7 @@ class MotherInfoViewModel: BaseViewModel {
     var detailStrs = NSMutableArray.init()
     var model:MotherModel!
     var collectModel:CollectModel!
+    var collectType:Bool = false
     
     override init() {
         super.init()
@@ -66,30 +67,42 @@ class MotherInfoViewModel: BaseViewModel {
     //MARK: NetWorkRequest
     func collectionStatus(){
         var url = ""
-        if self.collectModel != nil {
-            if self.collectModel.collectionType == "1" {
-                url = "\(BaseUrl)\(MotherCollectDeleteUrl)"
-            }else{
-                url = "\(BaseUrl)\(MotherCollectAddUrl)"
-            }
+        if self.collectType == true {
+            url = "\(BaseUrl)\(MotherCollectDeleteUrl)"
         }else{
-           url = "\(BaseUrl)\(MotherCollectStatusUrl)"
+            url = "\(BaseUrl)\(MotherCollectAddUrl)"
         }
-        
+
         let parameters = ["uid":UserModel.shareInstance.id,
                           "dmid":self.model.dmId]
         BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
             if !resultDic.isCompleted {
-                if self.collectModel != nil {
-                    if self.collectModel.collectionType == "1" {
-                        self.collectModel.collectionType = "2"
-                    }else{
-                        self.collectModel.collectionType = "1"
+                if self.collectType == false {
+                    if (resultDic.value as! NSDictionary).object(forKey: "status") as! String == "success" {
+                        self.collectType = true
                     }
                 }else{
-                    self.collectModel = CollectModel.init(fromDictionary: resultDic.value as! NSDictionary)
+                    if (resultDic.value as! NSDictionary).object(forKey: "status") as! String == "success" {
+                        self.collectType = false
+                    }
                 }
-                (self.controller as! MotherInfoViewController).setUpNavigationItem(collect: self.collectModel.collectionType == "1" ? true : false)
+                (self.controller as! MotherInfoViewController).setUpNavigationItem(collect: self.collectType)
+            }
+        }
+    }
+    
+    func collectionGetStatus(){
+        let url = "\(BaseUrl)\(MotherCollectStatusUrl)"
+        let parameters = ["uid":UserModel.shareInstance.id,
+                          "dmid":self.model.dmId]
+        BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
+            if !resultDic.isCompleted {
+                if (resultDic.value as! NSDictionary).object(forKey: "status") as! String == "error" {
+                    self.collectType = false
+                }else{
+                    self.collectType = true
+                }
+                (self.controller as! MotherInfoViewController).setUpNavigationItem(collect: self.collectType)
             }
         }
     }
