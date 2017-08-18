@@ -75,13 +75,13 @@ class CustomButton: UIButton {
     }
     
     func setWithNoBoarderButton(){
-        self.buttonSetTitleColor(App_Theme_FB718C_Color, sTitleColor: APP_Theme_F87D95_Color)
+        self.buttonSetTitleColor(App_Theme_1B76D9_Color, sTitleColor: APP_Theme_F87D95_Color)
     }
     
     func setWithBoarderButton(){
-        self.layer.borderColor = UIColor.init(hexString: App_Theme_FB718C_Color).cgColor
+        self.layer.borderColor = UIColor.init(hexString: App_Theme_1B76D9_Color).cgColor
         self.layer.borderWidth = 1.0
-        self.buttonSetTitleColor(App_Theme_FB718C_Color, sTitleColor: APP_Theme_F87D95_Color)
+        self.buttonSetTitleColor(App_Theme_1B76D9_Color, sTitleColor: APP_Theme_F87D95_Color)
     }
     
     func setWithDisbleBoarderButton(){
@@ -92,7 +92,7 @@ class CustomButton: UIButton {
     
     func setwithonBoarderButton(){
         self.setTitleColor(UIColor.white, for: UIControlState())
-        self.buttonSetThemColor(App_Theme_FB718C_Color, selectColor: APP_Theme_F87D95_Color, size: CGSize.init(width: self.frame.size.width, height: self.frame.size.height))
+        self.buttonSetThemColor(App_Theme_1B76D9_Color, selectColor: App_Theme_1B76D9_Color, size: CGSize.init(width: self.frame.size.width, height: self.frame.size.height))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -128,7 +128,7 @@ class GloableBottomButtonView: UIView {
     func setUpButton(_ title:String) {
         button = UIButton(type: .custom)
         button.setTitle(title, for: UIControlState())
-        button.buttonSetThemColor(App_Theme_FB718C_Color, selectColor: APP_Theme_F87D95_Color, size: CGSize.init(width: SwifterSwift.screenWidth, height: 49))
+        button.buttonSetThemColor(App_Theme_1B76D9_Color, selectColor: APP_Theme_F87D95_Color, size: CGSize.init(width: SwifterSwift.screenWidth, height: 49))
         button.titleLabel?.font = App_Theme_PinFan_R_15_Font
         button.setTitleColor(UIColor.init(hexString: App_Theme_FFFFFF_Color), for: UIControlState())
         button.titleLabel?.textAlignment = .center

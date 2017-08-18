@@ -8,6 +8,11 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - ReactiveCocoa (5.0.4):
     - ReactiveSwift (~> 1.1)
   - ReactiveSwift (1.1.5):
@@ -17,13 +22,13 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SnapKit (3.2.0)
-  - SwifterSwift (3.1.0):
-    - SwifterSwift/Cocoa (= 3.1.0)
-    - SwifterSwift/Foundation (= 3.1.0)
-    - SwifterSwift/UIKit (= 3.1.0)
-  - SwifterSwift/Cocoa (3.1.0)
-  - SwifterSwift/Foundation (3.1.0)
-  - SwifterSwift/UIKit (3.1.0)
+  - SwifterSwift (3.1.1):
+    - SwifterSwift/Cocoa (= 3.1.1)
+    - SwifterSwift/Foundation (= 3.1.1)
+    - SwifterSwift/UIKit (= 3.1.1)
+  - SwifterSwift/Cocoa (3.1.1)
+  - SwifterSwift/Foundation (3.1.1)
+  - SwifterSwift/UIKit (3.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -33,6 +38,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJExtension
   - MJRefresh
+  - NJKWebViewProgress
   - ReactiveCocoa (~> 5.0.2)
   - SDWebImage (~> 4.0.0-beta2)
   - SnapKit (~> 3.2.0)
@@ -46,13 +52,14 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   ReactiveCocoa: b31e754d15937811ede648fc83cd68f5de70a3d4
   ReactiveSwift: 3fea31f8fc49f112d2dc613282c5d395c4d167bb
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  SwifterSwift: f84eb7308f7742724b3cbf84283ce00f7c06d7fc
+  SwifterSwift: 8a93e265c97f552ff03a0da2369c74a3c030d482
 
-PODFILE CHECKSUM: 3bfa6aeefb0e2fe8a7da07fa5209b6af4081fbf3
+PODFILE CHECKSUM: 5b0507deb18e1bd5de3ff75769cea7927a34cdf9
 
 COCOAPODS: 1.1.1

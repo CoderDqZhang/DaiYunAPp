@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 let App_Theme_FFFFFF_Color = "FFFFFF"
-let App_Theme_FB718C_Color = "FB718C"
+let App_Theme_1B76D9_Color = "1B76D9"
 let APP_Theme_F87D95_Color = "F87D95"
 let App_Theme_E9EBF2_Color = "E9EBF2"
 let App_Theme_BBC1CB_Color = "BBC1CB"

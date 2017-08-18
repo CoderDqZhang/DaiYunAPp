@@ -14,15 +14,15 @@ import SwifterSwift
 class AppleThemeTool {
     class func setUpToolBarColor() {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.init(hexString: App_Theme_8A96A2_Color)], for: UIControlState())
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.init(hexString: App_Theme_FB718C_Color)], for: .selected)
-        UITabBar.appearance().tintColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.init(hexString: App_Theme_1B76D9_Color)], for: .selected)
+        UITabBar.appearance().tintColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
         
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+        UINavigationBar.appearance().barTintColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:App_Theme_PinFan_L_17_Font!,NSForegroundColorAttributeName:UIColor.init(hexString: App_Theme_FFFFFF_Color)]
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName:App_Theme_PinFan_L_15_Font!,NSForegroundColorAttributeName:UIColor.init(hexString: App_Theme_FFFFFF_Color)], for: UIControlState())
         SHARE_APPLICATION.setStatusBarStyle(.lightContent, animated: false)
-        UINavigationBar.appearance().setBackgroundImage(UIImage.init(color: UIColor.init(hexString: App_Theme_FB718C_Color), size: CGSize(width: SwifterSwift.screenWidth, height: 64)), for: .default)
+        UINavigationBar.appearance().setBackgroundImage(UIImage.init(color: UIColor.init(hexString: App_Theme_1B76D9_Color), size: CGSize(width: SwifterSwift.screenWidth, height: 64)), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage.init()
         UINavigationBar.appearance().isTranslucent = false
         

@@ -14,7 +14,7 @@ class MotherInfoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+        self.view.backgroundColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
         self.bindViewModel(viewModel: MotherInfoViewModel(), controller: self)
         self.setUpTableView(style: .grouped, cells: [MotherInfoTableViewCell.self,GloableLableDetailLabelImageCell.self], controller: self)
         self.bindeLogicViewModel()

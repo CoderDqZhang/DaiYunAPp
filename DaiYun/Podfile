@@ -16,6 +16,7 @@ target 'DaiYun' do
   pod 'FMDB'
   pod 'MJExtension'
   pod 'ReactiveCocoa', '~> 5.0.2'
+  pod 'NJKWebViewProgress'
   pod 'IQKeyboardManagerSwift', '4.0.9'
 
 end

@@ -10,13 +10,17 @@ import UIKit
 
 class MealViewController: BaseViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel(viewModel: MealViewModel(), controller: self)
         self.setUpTableView(style: .plain, cells: [PackageTableViewCell.self], controller: self)
+        self.changeTableViewFrame(frame: CGRect.init(x: 0, y: 40, width: SCREENWIDTH, height: SCREENHEIGHT - 40))
         // Do any additional setup after loading the view.
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

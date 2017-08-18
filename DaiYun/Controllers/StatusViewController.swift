@@ -41,10 +41,10 @@ class StatusViewController: BaseViewController {
         label.font = App_Theme_PinFan_R_17_Font
         label.text = text
         label.textAlignment = .center
-        label.textColor = select ? UIColor.init(hexString: App_Theme_FB718C_Color) : UIColor.init(hexString: App_Theme_DDE0E5_Color)
+        label.textColor = select ? UIColor.init(hexString: App_Theme_1B76D9_Color) : UIColor.init(hexString: App_Theme_DDE0E5_Color)
         view.addSubview(label)
         let lineLabel = UILabel.init(frame: CGRect.init(x: view.width / 2, y: 20, width: 1, height: 45))
-        lineLabel.backgroundColor = select ? UIColor.init(hexString: App_Theme_FB718C_Color) : UIColor.init(hexString: App_Theme_DDE0E5_Color)
+        lineLabel.backgroundColor = select ? UIColor.init(hexString: App_Theme_1B76D9_Color) : UIColor.init(hexString: App_Theme_DDE0E5_Color)
         if isShowLabel {
             view.addSubview(lineLabel)
         }

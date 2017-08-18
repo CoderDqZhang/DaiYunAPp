@@ -127,7 +127,7 @@ class GloableLableDetailLabelImageCell : UITableViewCell {
         
         detailLabel = UILabel.init()
         detailLabel.font = App_Theme_PinFan_R_15_Font
-        detailLabel.textColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+        detailLabel.textColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
         detailLabel.textAlignment = .right
         self.contentView.addSubview(detailLabel)
         

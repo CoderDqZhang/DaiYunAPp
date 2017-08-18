@@ -30,7 +30,7 @@ class FilterTableViewCell: UITableViewCell {
     }
     
     func updateTextColor(select:Bool){
-        self.textLabel?.textColor = select ? UIColor.init(hexString: App_Theme_FB718C_Color) : UIColor.init(hexString: App_Theme_8A96A2_Color)
+        self.textLabel?.textColor = select ? UIColor.init(hexString: App_Theme_1B76D9_Color) : UIColor.init(hexString: App_Theme_8A96A2_Color)
     }
     
     override func updateConstraints() {

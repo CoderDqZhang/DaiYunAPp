@@ -22,7 +22,9 @@ class MealViewModel: BaseViewModel {
     }
     
     func tableViewDidSelect(_ indexPath:IndexPath) {
-        
+        let toController = MealListViewController()
+        let controller = self.controller?.parent as! HomePageViewController
+        controller.viewModel.pushViewController(toController)
     }
     
     //MARK: NetWorkRequest

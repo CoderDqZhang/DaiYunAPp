@@ -37,7 +37,7 @@ class HomePageViewController: TYTabButtonPagerController {
     
     func setUpPageViewControllerStyle(){
         self.collectionLayoutEdging = kCollectionLayoutEdging
-        self.pagerBarColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+        self.pagerBarColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
         self.cellSpacing = kCellSpacing
         self.cellEdging = 10
         self.progressHeight = 2
@@ -47,7 +47,7 @@ class HomePageViewController: TYTabButtonPagerController {
         self.normalTextFont = App_Theme_PinFan_R_13_Font
         self.selectedTextFont = App_Theme_PinFan_R_13_Font
         self.normalTextColor = UIColor.init(hexString: App_Theme_8A96A2_Color)
-        self.selectedTextColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+        self.selectedTextColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
         self.selectedTextFont = App_Theme_PinFan_R_13_Font
     }
     

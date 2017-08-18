@@ -24,7 +24,7 @@ class LikeViewModel: BaseViewModel {
     func collectionViewDidSelctor(_ indexPath:IndexPath) {
         let toController = MotherInfoViewController()
         toController.model = CollectsModel.init(fromDictionary:  self.models.object(at: indexPath.row) as! NSDictionary).daimuInfo
-        NavigationPushView(self.controller!, toConroller: toController)
+        NavigationPushView(self.likeController!, toConroller: toController)
     }
     
     //MARK: RequestUrl

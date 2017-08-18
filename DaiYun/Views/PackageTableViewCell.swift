@@ -24,8 +24,8 @@ class PackageTableViewCell: UITableViewCell {
         label.layer.borderWidth = 1.0
         label.layer.cornerRadius = 5.0
         label.font = App_Theme_PinFan_R_30_Font
-        label.textColor = UIColor.init(hexString: App_Theme_FB718C_Color)
-        label.layer.borderColor = UIColor.init(hexString: App_Theme_FB718C_Color)?.cgColor
+        label.textColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
+        label.layer.borderColor = UIColor.init(hexString: App_Theme_1B76D9_Color)?.cgColor
         self.contentView.addSubview(label)
         
         self.updateConstraints()

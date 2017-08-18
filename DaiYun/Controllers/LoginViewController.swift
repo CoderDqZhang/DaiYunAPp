@@ -70,7 +70,7 @@ class LoginViewController: BaseViewController {
         
         
         loginButton = UIButton(type: .custom)
-        loginButton.buttonSetThemColor(App_Theme_FB718C_Color, selectColor: APP_Theme_F87D95_Color, size:CGSize.init(width: SwifterSwift.screenWidth - 30, height: 49))
+        loginButton.buttonSetThemColor(App_Theme_1B76D9_Color, selectColor: APP_Theme_F87D95_Color, size:CGSize.init(width: SwifterSwift.screenWidth - 30, height: 49))
         loginButton.setTitle("立即登录", for: UIControlState())
         loginButton.titleLabel?.font = App_Theme_PinFan_M_15_Font
         loginButton.isEnabled = true
@@ -116,7 +116,7 @@ class LoginViewController: BaseViewController {
     func createTextFiled(_ frame:CGRect) -> UITextField {
         let textField = UITextField(frame: frame)
         textField.font = App_Theme_PinFan_R_14_Font
-        textField.tintColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+        textField.tintColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
         return textField
     }
     

@@ -10,6 +10,7 @@
 #ifndef DaiYun_Bridging_Header_h
 #define DaiYun_Bridging_Header_h
 
+#import "UITableView+FDTemplateLayoutCell.h"
 #import "UIColor+Hex.h"
 #import "UIViewController+DismissKeyboard.h"
 #import "UIViewController+hideExcessLine.h"

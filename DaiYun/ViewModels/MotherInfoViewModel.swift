@@ -150,7 +150,7 @@ extension MotherInfoViewModel: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: MotherInfoTableViewCell.description(), for: indexPath)
-            cell.backgroundColor = UIColor.init(hexString: App_Theme_FB718C_Color)
+            cell.backgroundColor = UIColor.init(hexString: App_Theme_1B76D9_Color)
             self.tableViewMotherInfoTableViewCellSetData(indexPath, cell: cell as! MotherInfoTableViewCell)
             return cell
         default:

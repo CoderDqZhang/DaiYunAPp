@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NJKWebViewProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-DaiYun.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,22 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3312075E2FA590BB4F52A2D394578648</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3B99F344C9DC1E15D13CC4B0505DEAE3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4916718C2C760A9743F7D0219CFF9100</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +102,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>576CCF22F1F10A734CB25476832C2309</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5AA17C95E926B760FD08E0B487DAEFA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>62E5B22547ECC0E461C999920980F0F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6DFEA2D7071EF5AC7854F956FC1F401A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>826EFF975442065A54A0B2D3103EE6A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B720B357343B383F1D4549D5EA1E78F4</key>
+		<key>BDE5FD85E801FDE37F43E0DB20366329</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB40E378E0517E9F5B474BE5C86F886F</key>
+		<key>DF28C4DCAA0717940BE7AFAB7907FDB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3EB182A7E4E18019E4AB2933E2C799D</key>
+		<key>EF13CAF0B6E5F8B06C180ABEA60624B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FF73B53DD8AF1C3EEDD483B25D39BCBD</key>
+		<key>F3495E1A7DEE306A3510B27C5F4FC155</key>
 		<dict>
 			<key>primary</key>
 			<true/>

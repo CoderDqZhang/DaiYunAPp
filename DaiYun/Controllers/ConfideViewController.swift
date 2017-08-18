@@ -7,18 +7,47 @@
 //
 
 import UIKit
+import NJKWebViewProgress
+
 
 class ConfideViewController: BaseViewController {
 
+    var webView:UIWebView!
+    var progressProxy:NJKWebViewProgress!
+    var progressView:NJKWebViewProgressView!
+    
+    var strUrl:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setUpView()
+        self.loadWebViewUrl(url: strUrl)
         self.setUpNavigationItem()
         // Do any additional setup after loading the view.
     }
     
+    func setUpView(){
+        progressProxy = NJKWebViewProgress.init()
+        webView = UIWebView.init(frame: CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT))
+        webView.delegate = progressProxy
+        progressProxy.webViewProxyDelegate = self
+        progressProxy.progressDelegate = self
+        
+        let progressBarHeight:CGFloat = 2;
+        let frame = CGRect.init(x: 0, y: (navigationBar?.bounds.size.height)! - progressBarHeight, width: SCREENWIDTH, height: progressBarHeight)
+        progressView = NJKWebViewProgressView.init(frame: frame)
+        progressView.autoresizingMask = [UIViewAutoresizing.flexibleWidth,UIViewAutoresizing.flexibleTopMargin]
+        
+        self.view.addSubview(progressView)
+        
+    }
+    
     func setUpNavigationItem(){
         self.navigationItem.title = "信托账户"
+    }
+    
+    func loadWebViewUrl(url:String){
+        webView.loadRequest(URLRequest.init(url: URL.init(string: url)!))
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,4 +66,14 @@ class ConfideViewController: BaseViewController {
     }
     */
 
+}
+
+extension ConfideViewController : NJKWebViewProgressDelegate {
+    func webViewProgress(_ webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
+        progressView.setProgress(progress, animated: true)
+    }
+}
+
+extension ConfideViewController: UIWebViewDelegate {
+    
 }

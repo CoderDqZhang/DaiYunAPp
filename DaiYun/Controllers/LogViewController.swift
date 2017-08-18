@@ -12,7 +12,9 @@ class LogViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.bindViewModel(viewModel: LogViewModel(), controller: self)
+        self.setUpTableView(style: .plain, cells: [LogTableViewCell.self], controller: self)
+        self.tableView.separatorStyle = .none
         // Do any additional setup after loading the view.
     }
 

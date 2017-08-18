@@ -47,8 +47,7 @@ class BaseViewController: UIViewController {
     }
     
     func changeTableViewFrame(frame:CGRect) {
-        tableView.snp.remakeConstraints { (make) in
-        }
+        tableView.frame = frame
     }
     
     func getViewModel(){
