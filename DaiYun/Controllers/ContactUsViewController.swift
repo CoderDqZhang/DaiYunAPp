@@ -12,8 +12,8 @@ class ContactUsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bindViewModel(viewModel: ContavUsViewModel(), controller: self)
-        self.setUpTableView(style: .grouped, cells: [GloableLableDetailLabelImageCell.self], controller: self)
+//        self.bindViewModel(viewModel: ContavUsViewModel(), controller: self)
+//        self.setUpTableView(style: .grouped, cells: [GloableLableDetailLabelImageCell.self], controller: self)
         self.setUpNavigationItem()
         // Do any additional setup after loading the view.
     }

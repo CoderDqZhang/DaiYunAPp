@@ -12,6 +12,7 @@ class MealListViewController: BaseViewController {
 
     var linLabel:GloabLineView!
     var linLabel1:GloabLineView!
+    var model:PackageModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class MealListViewController: BaseViewController {
         self.updataTableViewFrame()
         self.setUpNavigationItme()
         self.setUpView()
+        self.bindLogic()
         // Do any additional setup after loading the view.
     }
     
@@ -69,6 +71,10 @@ class MealListViewController: BaseViewController {
             make.right.equalTo(self.view.snp.right).offset(0)
             make.bottom.equalTo(self.view.snp.bottom).offset(0)
         }
+    }
+    
+    func bindLogic(){
+        (self.viewModel as! MealListViewModel).requestMealItem(model:self.model)
     }
     
     override func didReceiveMemoryWarning() {

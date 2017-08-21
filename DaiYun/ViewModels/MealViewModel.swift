@@ -23,6 +23,7 @@ class MealViewModel: BaseViewModel {
     
     func tableViewDidSelect(_ indexPath:IndexPath) {
         let toController = MealListViewController()
+        toController.model = PackageModel.init(fromDictionary: self.models[indexPath.row] as! NSDictionary)
         let controller = self.controller?.parent as! HomePageViewController
         controller.viewModel.pushViewController(toController)
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class LogViewModel: BaseViewModel {
 
+    let models = NSMutableArray.init()
     override init() {
         super.init()
     }
@@ -17,6 +18,18 @@ class LogViewModel: BaseViewModel {
     //MARK: TableViewCellSetData
     func tableViewLogTableViewCellSetData(_ indexPath:IndexPath, cell:LogTableViewCell) {
         cell.cellSetData()
+    }
+    
+    func requestNetWork(model:MotherModel){
+        let url = "\(BaseUrl)\(LogDataItem)"
+        let parameters = ["uid":UserModel.shareInstance.id,
+                          "dmid":model.dmId]
+        BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
+            if !resultDic.isCompleted {
+                self.models = NSMutableArray.mj_keyValuesArray(withObjectArray: resultDic.value)
+                self.controller?.tableView.reloadData()
+            }
+        }
     }
 }
 

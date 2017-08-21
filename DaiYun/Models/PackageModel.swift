@@ -242,3 +242,79 @@ class Value : NSObject, NSCoding{
     }
     
 }
+
+class PackageAllValueModel : NSObject, NSCoding{
+    
+    var taocanValueList : [Value]!
+    var tvtId : String!
+    var tvtName : String!
+    
+    
+    /**
+     * Instantiate the instance using the passed dictionary values to set the properties values
+     */
+    init(fromDictionary dictionary: NSDictionary){
+        taocanValueList = [Value]()
+        if let taocanValueListArray = dictionary["taocan_value_list"] as? [NSDictionary]{
+            for dic in taocanValueListArray{
+                let value = Value(fromDictionary: dic)
+                taocanValueList.append(value)
+            }
+        }
+        tvtId = dictionary["tvt_id"] as? String
+        tvtName = dictionary["tvt_name"] as? String
+    }
+    
+    /**
+     * Returns all the available property values in the form of NSDictionary object where the key is the approperiate json key and the value is the value of the corresponding property
+     */
+    func toDictionary() -> NSDictionary
+    {
+        let dictionary = NSMutableDictionary()
+        if taocanValueList != nil{
+            var dictionaryElements = [NSDictionary]()
+            for taocanValueListElement in taocanValueList {
+                dictionaryElements.append(taocanValueListElement.toDictionary())
+            }
+            dictionary["taocan_value_list"] = dictionaryElements
+        }
+        if tvtId != nil{
+            dictionary["tvt_id"] = tvtId
+        }
+        if tvtName != nil{
+            dictionary["tvt_name"] = tvtName
+        }
+        return dictionary
+    }
+    
+    /**
+     * NSCoding required initializer.
+     * Fills the data from the passed decoder
+     */
+    @objc required init(coder aDecoder: NSCoder)
+    {
+        taocanValueList = aDecoder.decodeObject(forKey: "taocan_value_list") as? [Value]
+        tvtId = aDecoder.decodeObject(forKey: "tvt_id") as? String
+        tvtName = aDecoder.decodeObject(forKey: "tvt_name") as? String
+        
+    }
+    
+    /**
+     * NSCoding required method.
+     * Encodes mode properties into the decoder
+     */
+    @objc func encode(with aCoder: NSCoder)
+    {
+        if taocanValueList != nil{
+            aCoder.encode(taocanValueList, forKey: "taocan_value_list")
+        }
+        if tvtId != nil{
+            aCoder.encode(tvtId, forKey: "tvt_id")
+        }
+        if tvtName != nil{
+            aCoder.encode(tvtName, forKey: "tvt_name")
+        }
+        
+    }
+    
+}

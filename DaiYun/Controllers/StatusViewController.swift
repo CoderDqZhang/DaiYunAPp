@@ -11,6 +11,7 @@ import UIKit
 class StatusViewController: BaseViewController {
 
     let array = ["胚胎准备","代母匹配","代母检查","代母体检","代母合同签署","胚胎移植","确认怀孕","妇产科"]
+    var model:NowStatu!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class StatusViewController: BaseViewController {
         self.view.addSubview(scrollView)
         for i in 0...array.count - 1 {
             let frame = CGRect.init(x: 0, y: i * 80 + 20, width: Int(SCREENWIDTH), height: 76)
-            let view = self.setUpLabelView(frame: frame, isShowLabel: i == array.count - 1 ? false : true, text: array[i], select: i < 3 ? true : false)
+            let view = self.setUpLabelView(frame: frame, isShowLabel: i == array.count - 1 ? false : true, text: array[i], select: i < Int(self.model.duStatus)! ? true : false)
             scrollView.addSubview(view)
         }
     }

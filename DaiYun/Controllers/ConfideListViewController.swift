@@ -1,31 +1,38 @@
 //
-//  ProfileViewController.swift
+//  ConfideListViewController.swift
 //  DaiYun
 //
-//  Created by Zhang on 06/08/2017.
+//  Created by Zhang on 19/08/2017.
 //  Copyright © 2017 Zhang. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+class ConfideListViewController: BaseViewController {
 
+    var isConfideView:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bindViewModel(viewModel: ProfileViewModel(), controller: self)
+        self.bindViewModel(viewModel: ConfideListViewModel(), controller: self)
         self.setUpTableView(style: .grouped, cells: [GloableLableDetailLabelImageCell.self, ProfileTableViewCell.self, LogoutTableViewCell.self], controller: self)
+        self.setUpNavigationItem()
+        self.bindLogic()
         // Do any additional setup after loading the view.
     }
     
+    func bindLogic(){
+        (self.viewModel as! ConfideListViewModel).requestConfideList(type: isConfideView ? "3" : "1")
+    }
+
+    
     func setUpNavigationItem(){
-        self.navigationItem.title = "个人信息"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "代母信息", style: .plain, target: self, action: #selector(ProfileViewController.rightBarItemPress))
+        
     }
     
     func rightBarItemPress(){
-        (self.viewModel as! ProfileViewModel).rightBarItemPress()
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

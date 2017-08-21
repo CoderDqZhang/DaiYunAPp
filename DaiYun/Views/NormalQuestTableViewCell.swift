@@ -29,8 +29,8 @@ class NormalQuestTableViewCell: UITableViewCell {
         self.updateConstraints()
     }
     
-    func cellSetData(str:String){
-        detailLable.text = str
+    func cellSetData(model:NormalQuestModel){
+        detailLable.text = model.flAnswer
     }
     
     required init?(coder aDecoder: NSCoder) {

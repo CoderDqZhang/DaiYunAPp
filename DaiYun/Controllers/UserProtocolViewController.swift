@@ -13,7 +13,7 @@ import SwifterSwift
 class UserProtocolViewController: UIViewController {
 
     var webView:WKWebView!
-    var url:String!
+    var url:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class UserProtocolViewController: UIViewController {
         self.setNavigationItemBack()
         self.view.backgroundColor = UIColor.white
         webView = WKWebView(frame: CGRect.init(x: 0, y: 0, width: SwifterSwift.screenWidth, height: SwifterSwift.screenHeight - 64))
-        webView.load(URLRequest.init(url: URL.init(string: url)!))
+//        webView.load(URLRequest.init(url: URL.init(string: url)!))
         self.view.addSubview(webView)
         // Do any additional setup after loading the view.
     }

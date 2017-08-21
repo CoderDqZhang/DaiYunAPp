@@ -11,9 +11,18 @@ import UIKit
 class ProfileViewModel: BaseViewModel {
 
     let sessionNumberRow = [1,2,2,1,4,1]
-    let cellTextLabelStrs = [["当前状态","匹配信息"],["信托账户","签署文件"],["医生信息"],["常见问题","会客室","查看日志","关于我们"]]
+    let cellTextLabelStrs = [["当前状态","匹配信息"],["信托账户","签署文件"],["医生信息"],["常见问题","联系我们","查看日志","关于我们"]]
+    var models:BindMotherInfoModel!
+    
     override init() {
-        
+        super.init()
+        self.requestMothModel()
+    }
+    
+    func rightBarItemPress(){
+        let toController = MotherInfoViewController()
+        toController.model = self.models.dmInfo
+        NavigationPushView(self.controller!, toConroller: toController)
     }
     
     func logOutPress(){
@@ -24,7 +33,11 @@ class ProfileViewModel: BaseViewModel {
     //MARK: TableViewCellSetData
     func tableViewGloableLableDetailLabelImageCellSetData(_ indexPath:IndexPath, cell:GloableLableDetailLabelImageCell) {
         if indexPath.section == 1 && indexPath.row == 0 {
-            cell.setCellData(text: cellTextLabelStrs[indexPath.section - 1][indexPath.row], detailText: "胚胎准备", detailTextColor: nil)
+            if self.models != nil {
+                cell.setCellData(text: cellTextLabelStrs[indexPath.section - 1][indexPath.row], detailText: self.models.nowStatus.statusName, detailTextColor: nil)
+            }else{
+                cell.setCellData(text: cellTextLabelStrs[indexPath.section - 1][indexPath.row], detailText: "", detailTextColor: nil)
+            }
         }else{
             cell.setCellData(text: cellTextLabelStrs[indexPath.section - 1][indexPath.row], detailText: nil, detailTextColor: nil)
         }
@@ -42,16 +55,24 @@ class ProfileViewModel: BaseViewModel {
         case 1:
             switch indexPath.row {
             case 0:
-                NavigationPushView(self.controller!, toConroller: StatusViewController())
+                if self.models != nil {
+                    let toControllerVC = StatusViewController()
+                    toControllerVC.model = self.models.nowStatus
+                    NavigationPushView(self.controller!, toConroller: toControllerVC)
+                }
             default:
                 NavigationPushView(self.controller!, toConroller: MatchingInfoViewController())
             }
         case 2:
             switch indexPath.row {
             case 0:
-                NavigationPushView(self.controller!, toConroller: ConfideViewController())
+                let toController = ConfideListViewController()
+                toController.isConfideView = true
+                NavigationPushView(self.controller!, toConroller: toController)
             default:
-                NavigationPushView(self.controller!, toConroller: SignFileViewController())
+                let toController = ConfideListViewController()
+                toController.isConfideView = false
+                NavigationPushView(self.controller!, toConroller: toController)
             }
         case 3:
             NavigationPushView(self.controller!, toConroller: DoctorInfoViewController())
@@ -65,6 +86,19 @@ class ProfileViewModel: BaseViewModel {
                 NavigationPushView(self.controller!, toConroller: LogViewController())
             default:
                 NavigationPushView(self.controller!, toConroller: AboutUsViewController())
+            }
+        }
+    }
+    
+    //MARK: RequestUrl
+    func requestMothModel(){
+        let url = "\(BaseUrl)\(BindMotherInfo)"
+        let parameters = ["uid":UserModel.shareInstance.id]
+        BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
+            if !resultDic.isCompleted {
+                self.models = BindMotherInfoModel.init(fromDictionary: resultDic.value as! NSDictionary)
+                self.controller?.tableView.reloadData()
+                (self.controller as! ProfileViewController).setUpNavigationItem()
             }
         }
     }

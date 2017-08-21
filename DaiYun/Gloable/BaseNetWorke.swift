@@ -224,6 +224,33 @@ class BaseNetWorke {
         })
     }
     
+    func downloadUrlWithString(_ url:String, parameters:AnyObject?) -> Signal<Any, NSError> {
+        let tools = Tools.shareInstance.showLoading(KWINDOWDS(), msg: "下载中")
+        return Signal.init({ (subscriber) -> Disposable? in
+            let urlString = URLRequest.init(url: URL.init(string: url)!)
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let fileURL = documentsURL.appendingPathComponent("test.pdf")
+                
+                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+            }
+            
+            Alamofire.download(urlString, to: destination).response { response in
+                print(response)
+                if response.error != nil {
+                    _ = Tools.shareInstance.showMessage(KWINDOWDS(), msg: (response.error?.localizedDescription)!, autoHidder: true)
+                }else{
+                    if response.response?.statusCode == 200 {
+                        subscriber.send(value: response.destinationURL!)
+                    }
+                }
+                Tools.shareInstance.hiddenLoading(hud: tools)
+                subscriber.sendCompleted()
+            }
+             return nil
+        })
+    }
+    
     ///
     /// - parameter url:        输入URL
     /// - parameter parameters: 参数

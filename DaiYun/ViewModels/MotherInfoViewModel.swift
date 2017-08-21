@@ -77,6 +77,7 @@ class MotherInfoViewModel: BaseViewModel {
                           "dmid":self.model.dmId]
         BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
             if !resultDic.isCompleted {
+                _ = Tools.shareInstance.showMessage(KWINDOWDS(), msg: (resultDic.value as! NSDictionary).object(forKey: "data") as! String, autoHidder: true)
                 if self.collectType == false {
                     if (resultDic.value as! NSDictionary).object(forKey: "status") as! String == "success" {
                         self.collectType = true
@@ -86,6 +87,7 @@ class MotherInfoViewModel: BaseViewModel {
                         self.collectType = false
                     }
                 }
+                
                 (self.controller as! MotherInfoViewController).setUpNavigationItem(collect: self.collectType)
             }
         }
@@ -97,10 +99,12 @@ class MotherInfoViewModel: BaseViewModel {
                           "dmid":self.model.dmId]
         BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
             if !resultDic.isCompleted {
-                if (resultDic.value as! NSDictionary).object(forKey: "status") as! String == "error" {
-                    self.collectType = false
-                }else{
+                if (resultDic.value as! NSDictionary).object(forKey: "status") as! String == "success" {
                     self.collectType = true
+                }else{
+                    self.collectType = false
+                    _ = Tools.shareInstance.showMessage(KWINDOWDS(), msg: (resultDic.value as! NSDictionary).object(forKey: "data") as! String, autoHidder: true)
+
                 }
                 (self.controller as! MotherInfoViewController).setUpNavigationItem(collect: self.collectType)
             }

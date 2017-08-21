@@ -30,8 +30,8 @@ class LikeViewModel: BaseViewModel {
     //MARK: RequestUrl
     func requestLikeModel(){
         let url = "\(BaseUrl)\(MotherCollectsUrl)"
-//        let parameters = ["uid":UserModel.shareInstance.id]
-        let parameters = ["uid":"1"]
+        let parameters = ["uid":UserModel.shareInstance.id]
+//        let parameters = ["uid":"1"]
         BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
             if !resultDic.isCompleted {
                 self.models = NSMutableArray.mj_objectArray(withKeyValuesArray: resultDic.value)

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F13C4241F4A975900F5D53A /* BindMotherInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F13C4231F4A975900F5D53A /* BindMotherInfoModel.swift */; };
+		1F13C4261F4AA3FC00F5D53A /* PDFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F13C4251F4AA3FC00F5D53A /* PDFModel.swift */; };
+		1F13C4281F4ABFA100F5D53A /* NormalQuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F13C4271F4ABFA100F5D53A /* NormalQuestModel.swift */; };
+		1F13C42A1F4AC2E900F5D53A /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F13C4291F4AC2E900F5D53A /* LogModel.swift */; };
 		1F44C1411F42A0F5008BCD80 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C1401F42A0F5008BCD80 /* LogViewController.swift */; };
 		1F44C1431F42A6F5008BCD80 /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C1421F42A6F5008BCD80 /* LogViewModel.swift */; };
 		1F44C1451F42A7BB008BCD80 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44C1441F42A7BB008BCD80 /* LogTableViewCell.swift */; };
@@ -34,6 +38,9 @@
 		1F9D11E51F46B16700B0711C /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D11E01F46B16700B0711C /* UITableView+FDTemplateLayoutCell.m */; };
 		1F9D11E61F46B16700B0711C /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D11E21F46B16700B0711C /* UITableView+FDTemplateLayoutCellDebug.m */; };
 		1FCCD5E81F3ABD600073ED58 /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCD5E71F3ABD600073ED58 /* LogoutTableViewCell.swift */; };
+		1FE1BBE11F47E50E00745C52 /* ConfideListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE1BBE01F47E50E00745C52 /* ConfideListViewController.swift */; };
+		1FE1BBE31F47E56400745C52 /* ConfideListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE1BBE21F47E56400745C52 /* ConfideListViewModel.swift */; };
+		1FE1BBE51F47E6A900745C52 /* TestDemo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1FE1BBE41F47E6A900745C52 /* TestDemo.pdf */; };
 		1FE36B051F306C4C00E895C7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B041F306C4B00E895C7 /* HomePageViewController.swift */; };
 		1FE36B111F306C7900E895C7 /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B091F306C7900E895C7 /* TYPagerController.m */; };
 		1FE36B121F306C7900E895C7 /* TYTabButtonPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36B0B1F306C7900E895C7 /* TYTabButtonPagerController.m */; };
@@ -82,7 +89,6 @@
 		1FF805CA1F3EBEB900237FDF /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF805C91F3EBEB900237FDF /* PackageTableViewCell.swift */; };
 		1FFA270E1F25EAA80051E228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA270D1F25EAA80051E228 /* AppDelegate.swift */; };
 		1FFA27101F25EAA80051E228 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA270F1F25EAA80051E228 /* ViewController.swift */; };
-		1FFA27131F25EAA80051E228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27111F25EAA80051E228 /* Main.storyboard */; };
 		1FFA27151F25EAA80051E228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27141F25EAA80051E228 /* Assets.xcassets */; };
 		1FFA27181F25EAA80051E228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA27161F25EAA80051E228 /* LaunchScreen.storyboard */; };
 		1FFA27271F25F59F0051E228 /* BaseNetWorke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA27261F25F59F0051E228 /* BaseNetWorke.swift */; };
@@ -100,6 +106,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F13C4231F4A975900F5D53A /* BindMotherInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindMotherInfoModel.swift; sourceTree = "<group>"; };
+		1F13C4251F4AA3FC00F5D53A /* PDFModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFModel.swift; sourceTree = "<group>"; };
+		1F13C4271F4ABFA100F5D53A /* NormalQuestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalQuestModel.swift; sourceTree = "<group>"; };
+		1F13C4291F4AC2E900F5D53A /* LogModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
 		1F44C1401F42A0F5008BCD80 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		1F44C1421F42A6F5008BCD80 /* LogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		1F44C1441F42A7BB008BCD80 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +143,9 @@
 		1F9D11E11F46B16700B0711C /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		1F9D11E21F46B16700B0711C /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
 		1FCCD5E71F3ABD600073ED58 /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
+		1FE1BBE01F47E50E00745C52 /* ConfideListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfideListViewController.swift; sourceTree = "<group>"; };
+		1FE1BBE21F47E56400745C52 /* ConfideListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfideListViewModel.swift; sourceTree = "<group>"; };
+		1FE1BBE41F47E6A900745C52 /* TestDemo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TestDemo.pdf; sourceTree = "<group>"; };
 		1FE36B041F306C4B00E895C7 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		1FE36B081F306C7900E895C7 /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
 		1FE36B091F306C7900E895C7 /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
@@ -187,7 +200,6 @@
 		1FFA270A1F25EAA80051E228 /* DaiYun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiYun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFA270D1F25EAA80051E228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FFA270F1F25EAA80051E228 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1FFA27121F25EAA80051E228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FFA27141F25EAA80051E228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FFA27171F25EAA80051E228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FFA27191F25EAA80051E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -351,6 +363,10 @@
 			isa = PBXGroup;
 			children = (
 				1FE36B391F36E70E00E895C7 /* UserModel.swift */,
+				1F13C4231F4A975900F5D53A /* BindMotherInfoModel.swift */,
+				1F13C4251F4AA3FC00F5D53A /* PDFModel.swift */,
+				1F13C4271F4ABFA100F5D53A /* NormalQuestModel.swift */,
+				1F13C4291F4AC2E900F5D53A /* LogModel.swift */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -372,6 +388,7 @@
 				1FE36B501F3752BA00E895C7 /* StatusViewController.swift */,
 				1FE36B521F3752D900E895C7 /* MatchingInfoViewController.swift */,
 				1FE36B541F37531500E895C7 /* ConfideViewController.swift */,
+				1FE1BBE01F47E50E00745C52 /* ConfideListViewController.swift */,
 				1FE36B561F37533700E895C7 /* SignFileViewController.swift */,
 				1FE36B581F37534500E895C7 /* DoctorInfoViewController.swift */,
 				1F44C1401F42A0F5008BCD80 /* LogViewController.swift */,
@@ -394,6 +411,7 @@
 				1F44C1421F42A6F5008BCD80 /* LogViewModel.swift */,
 				1FE36B6A1F37550800E895C7 /* ContavUsViewModel.swift */,
 				1FE36B6C1F37551E00E895C7 /* AboutUsViewModel.swift */,
+				1FE1BBE21F47E56400745C52 /* ConfideListViewModel.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -441,8 +459,8 @@
 				1FFA272B1F25F5EE0051E228 /* Define.swift */,
 				1FFA272C1F25F5EE0051E228 /* Config.swift */,
 				1F63C47B1F2DCC0F0058A997 /* RequestUrl.swift */,
+				1FE1BBE41F47E6A900745C52 /* TestDemo.pdf */,
 				1FFA27241F25F52C0051E228 /* DaiYun-Bridging-Header.h */,
-				1FFA27111F25EAA80051E228 /* Main.storyboard */,
 				1F9D11D41F46941E00B0711C /* Default-568.png */,
 				1FFA27141F25EAA80051E228 /* Assets.xcassets */,
 				1FFA27161F25EAA80051E228 /* LaunchScreen.storyboard */,
@@ -601,7 +619,7 @@
 				TargetAttributes = {
 					1FFA27091F25EAA80051E228 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 77L324L35A;
+						DevelopmentTeam = RRJ2YCVWL7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -630,8 +648,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFA27181F25EAA80051E228 /* LaunchScreen.storyboard in Resources */,
+				1FE1BBE51F47E6A900745C52 /* TestDemo.pdf in Resources */,
 				1FFA27151F25EAA80051E228 /* Assets.xcassets in Resources */,
-				1FFA27131F25EAA80051E228 /* Main.storyboard in Resources */,
 				1F9D11D51F46941E00B0711C /* Default-568.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,6 +723,7 @@
 				1F9D11E31F46B16700B0711C /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				1F63C4731F2DCBB80058A997 /* LoginViewController.swift in Sources */,
 				1F63C4701F2DCB0E0058A997 /* UIViewController+NavigationBar.swift in Sources */,
+				1F13C4261F4AA3FC00F5D53A /* PDFModel.swift in Sources */,
 				1FE36B4F1F374C1C00E895C7 /* ProfileTableViewCell.swift in Sources */,
 				1FE36B491F3701CB00E895C7 /* ProfileViewController.swift in Sources */,
 				1FE36B331F30739500E895C7 /* FilterTableViewCell.swift in Sources */,
@@ -716,6 +735,7 @@
 				1FE36B301F30731F00E895C7 /* MealViewModel.swift in Sources */,
 				1FE36B6B1F37550800E895C7 /* ContavUsViewModel.swift in Sources */,
 				1FFA27351F25F6720051E228 /* UIButton+Extentions.swift in Sources */,
+				1FE1BBE11F47E50E00745C52 /* ConfideListViewController.swift in Sources */,
 				1FFA27311F25F6190051E228 /* String+Size.swift in Sources */,
 				1FE36B2A1F3072F600E895C7 /* LikeViewModel.swift in Sources */,
 				1F9D11E61F46B16700B0711C /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
@@ -744,6 +764,7 @@
 				1FCCD5E81F3ABD600073ED58 /* LogoutTableViewCell.swift in Sources */,
 				1FE36B2C1F30730300E895C7 /* MotherViewModel.swift in Sources */,
 				1FE36B611F3754C400E895C7 /* MatchingInfoViewModel.swift in Sources */,
+				1F13C4281F4ABFA100F5D53A /* NormalQuestModel.swift in Sources */,
 				1FE36B141F306C7900E895C7 /* TYTabTitleViewCell.m in Sources */,
 				1FE36B5F1F37536D00E895C7 /* AboutUsViewController.swift in Sources */,
 				1F63C4681F2DCA630058A997 /* HomeViewController.swift in Sources */,
@@ -751,11 +772,13 @@
 				1FE36B121F306C7900E895C7 /* TYTabButtonPagerController.m in Sources */,
 				1F9D11E51F46B16700B0711C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				1FE36B751F375D5A00E895C7 /* MotherInfoViewModel.swift in Sources */,
+				1F13C4241F4A975900F5D53A /* BindMotherInfoModel.swift in Sources */,
 				1F44C1451F42A7BB008BCD80 /* LogTableViewCell.swift in Sources */,
 				1F63C4661F2DCA510058A997 /* BaseViewController.swift in Sources */,
 				1F9D11E41F46B16700B0711C /* UITableView+FDKeyedHeightCache.m in Sources */,
 				1FE36B461F36F62F00E895C7 /* ImageViewManager.swift in Sources */,
 				1FFA27101F25EAA80051E228 /* ViewController.swift in Sources */,
+				1FE1BBE31F47E56400745C52 /* ConfideListViewModel.swift in Sources */,
 				1FE36B631F3754D300E895C7 /* ConfideViewModel.swift in Sources */,
 				1FFA27271F25F59F0051E228 /* BaseNetWorke.swift in Sources */,
 				1FE36B371F35A44500E895C7 /* MotherCollectionViewCell.swift in Sources */,
@@ -763,6 +786,7 @@
 				1FE36B691F3754FB00E895C7 /* NormalViewModel.swift in Sources */,
 				1FE36B591F37534500E895C7 /* DoctorInfoViewController.swift in Sources */,
 				1FE36B6F1F37584100E895C7 /* NormalQuestTableViewCell.swift in Sources */,
+				1F13C42A1F4AC2E900F5D53A /* LogModel.swift in Sources */,
 				1FFA270E1F25EAA80051E228 /* AppDelegate.swift in Sources */,
 				1FE36B241F30723C00E895C7 /* FilterViewController.swift in Sources */,
 				1FFA272D1F25F5EE0051E228 /* Define.swift in Sources */,
@@ -782,14 +806,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1FFA27111F25EAA80051E228 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FFA27121F25EAA80051E228 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1FFA27161F25EAA80051E228 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -900,11 +916,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 77L324L35A;
+				DEVELOPMENT_TEAM = RRJ2YCVWL7;
 				INFOPLIST_FILE = DaiYun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DaiYun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DaiYun.daiyun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DaiYun/DaiYun-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -917,11 +933,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 77L324L35A;
+				DEVELOPMENT_TEAM = RRJ2YCVWL7;
 				INFOPLIST_FILE = DaiYun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DaiYun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DaiYun.daiyun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DaiYun/DaiYun-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

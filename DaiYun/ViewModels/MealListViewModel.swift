@@ -10,19 +10,83 @@ import UIKit
 
 class MealListViewModel: BaseViewModel {
 
-    var titleStrs = ["代母匹配","代母管理","第三方信托账户","国际协调"]
-    var cellStrs = [["非医疗身体素质评估","代母及其伴侣犯罪调查","代母心理调查","准父母犯罪背景调查"],["代母微信群管理","代母群活动","孕期用药指导及监督","生产探望","生产全程陪同","孕期保健品及有机食品补助","代母心理补导"],["账户管理","网银账户查询","国际汇款绿色通道"],["代母微信群管理","代母群活动","孕期用药指导及监督","生产探望","生产全程陪同","孕期保健品及有机食品补助","代母心理补导"]]
+    var allItem = NSMutableArray.init()
+    var selectItem:PackageDescModel!
+    var select = NSMutableArray.init()
     override init() {
         super.init()
     }
     
     //MARK: TableViewCellSetData
     func tableViewPackageItemTableViewCellSetData(_ indexPath:IndexPath, cell:PackageItemTableViewCell) {
-        cell.cellSetData(itemTitle: cellStrs[indexPath.section][indexPath.row], select: false)
+        cell.cellSetData(itemTitle: PackageAllValueModel.init(fromDictionary: self.allItem[indexPath.section] as! NSDictionary).taocanValueList[indexPath.row].tcvName , select: (select[indexPath.section] as! NSMutableArray)[indexPath.row] as! Bool)
     }
     
     func tableViewDidSelect(_ indexPath:IndexPath){
         
+    }
+    
+    //MARK: NetWorkingRequest
+    func requestMealItem(model:PackageModel){
+        let semaphore = DispatchSemaphore.init(value: 0)
+        
+        let group = DispatchGroup.init()
+        let queue = DispatchQueue.global(qos: .default)
+        
+        let allItemQueue = DispatchQueue.init(label: "AllItem")
+        allItemQueue.async(group: group, qos: .default, flags: DispatchWorkItemFlags.noQoS) { 
+            let url = "\(BaseUrl)\(PackageDesc)"
+            let parameters = ["tcid":model.tcId]
+            BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
+                if !resultDic.isCompleted {
+                    self.selectItem = PackageDescModel.init(fromDictionary: resultDic.value as! NSDictionary)
+                    semaphore.signal()
+                }
+            }
+        }
+        
+        let selectQueue = DispatchQueue.init(label: "selectAllItem")
+        selectQueue.async(group: group, qos: .default, flags: DispatchWorkItemFlags.noQoS) {
+            let urls = "\(BaseUrl)\(PackageAllItem)"
+            BaseNetWorke.sharedInstance.getUrlWithString(urls, parameters: nil).observe { (resultDic) in
+                if !resultDic.isCompleted {
+                    self.allItem = NSMutableArray.mj_keyValuesArray(withObjectArray: resultDic.value as! [Any])
+                    semaphore.signal()
+                }
+            }
+        }
+        
+        group.notify(queue: queue) { 
+            semaphore.wait()
+            semaphore.wait()
+            self.select = NSMutableArray.init()
+            for model in self.allItem {
+                let array = NSMutableArray.init()
+                let package = PackageAllValueModel.init(fromDictionary: model as! NSDictionary)
+                for _ in package.taocanValueList {
+                    array.add(false)
+                }
+                self.select.add(array)
+            }
+            
+            for item in self.selectItem.values {
+                for i in 0...self.allItem.count - 1 {
+                    let model = PackageAllValueModel.init(fromDictionary: self.allItem[i] as! NSDictionary)
+                    for value in model.taocanValueList {
+                        if item.tcvId == value.tcvId {
+                            let array = NSMutableArray.init(array: self.select[Int(item.tcvType)!] as! [Any])
+                            array.replaceObject(at: i, with: true)
+                            self.select.replaceObject(at: Int(item.tcvType)!, with: array)
+                            break
+                        }
+                    }
+                    
+                }
+            }
+            DispatchQueue.main.async {
+                self.controller?.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -47,17 +111,17 @@ extension MealListViewModel: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleStrs[section]
+        return PackageAllValueModel.init(fromDictionary: self.allItem[section] as! NSDictionary).tvtName
     }
 }
 
 extension MealListViewModel: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return titleStrs.count
+        return self.allItem.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellStrs[section].count
+        return PackageAllValueModel.init(fromDictionary: self.allItem[section] as! NSDictionary).taocanValueList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

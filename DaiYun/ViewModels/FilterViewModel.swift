@@ -19,7 +19,7 @@ class FilterViewModel: BaseViewModel {
              selectArray = [0,0,0]
             UserDefaultsSetSynchronize(selectArray, key: "FilterArray")
         }else{
-            let array = UserDefaultsGetSynchronize("FilterArray") as! NSMutableArray
+            let array = NSMutableArray.init(array: UserDefaultsGetSynchronize("FilterArray") as! Array)
             for i in array {
                 selectArray.add(i)
             }
