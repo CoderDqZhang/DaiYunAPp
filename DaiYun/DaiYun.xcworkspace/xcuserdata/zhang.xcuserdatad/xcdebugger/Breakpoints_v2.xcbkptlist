@@ -148,7 +148,7 @@
                   moduleName = "DaiYun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhang/Desktop/DaiYunApp/DaiYun/ViewModels/ConfideViewModel.swift"
-                  timestampString = "524993130.241502"
+                  timestampString = "525160802.309799"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -163,7 +163,7 @@
                   moduleName = "DaiYun"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhang/Desktop/DaiYunApp/DaiYun/ViewModels/ConfideViewModel.swift"
-                  timestampString = "524993130.244069"
+                  timestampString = "525160802.311652"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -211,13 +211,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewModels/ProfileViewModel.swift"
-            timestampString = "524991307.982772"
+            filePath = "Views/LogTableViewCell.swift"
+            timestampString = "525000567.862991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "requestMothModel()"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "cellSetData(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/LogTableViewCell.swift"
+            timestampString = "525000472.68359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "cellSetData(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/ConnectUserTableViewCell.swift"
+            timestampString = "525159183.159609"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "cellSetData(str:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

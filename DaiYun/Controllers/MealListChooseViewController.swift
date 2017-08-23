@@ -1,28 +1,35 @@
 //
-//  ContactUsViewController.swift
+//  MealListChooseViewController.swift
 //  DaiYun
 //
-//  Created by Zhang on 06/08/2017.
+//  Created by Zhang on 23/08/2017.
 //  Copyright © 2017 Zhang. All rights reserved.
 //
 
 import UIKit
 
-class ContactUsViewController: BaseViewController {
+typealias SelectChooseMeal = (_ model:PackageModel) -> Void
 
+class MealListChooseViewController: BaseViewController {
+
+    var model:PackageModel!
+    var selectChooseMeal:SelectChooseMeal!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bindViewModel(viewModel: ContavUsViewModel(), controller: self)
-        self.setUpTableView(style: .grouped, cells: [ConnectOtherTableViewCell.self,ConnectUserTableViewCell.self], controller: self)
-        self.setUpNavigationItem()
-        self.view.backgroundColor = UIColor.init(hexString: App_Theme_F6F7FA_Color)
-        self.tableView.separatorStyle = .none
-        self.tableView.backgroundColor = UIColor.init(hexString: App_Theme_F6F7FA_Color)
+        self.bindViewModel(viewModel: MealListChooseViewModel(), controller: self)
+        self.setUpTableView(style: .grouped, cells: [GloableLableDetailLabelImageCell.self], controller: self)
+        self.bindLogic()
+        self.setUpNavigaitonItem()
         // Do any additional setup after loading the view.
     }
     
-    func setUpNavigationItem(){
-        self.navigationItem.title = "联系我们"
+    func bindLogic(){
+        (self.viewModel as! MealListChooseViewModel).model = model
+    }
+    
+    func setUpNavigaitonItem(){
+        self.navigationItem.title = "添加套餐"
     }
 
     override func didReceiveMemoryWarning() {

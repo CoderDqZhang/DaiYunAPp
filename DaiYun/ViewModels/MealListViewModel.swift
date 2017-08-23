@@ -12,6 +12,7 @@ class MealListViewModel: BaseViewModel {
 
     var allItem = NSMutableArray.init()
     var selectItem:PackageDescModel!
+    var otherItme:PackageDescModel!
     var select = NSMutableArray.init()
     override init() {
         super.init()
@@ -24,6 +25,16 @@ class MealListViewModel: BaseViewModel {
     
     func tableViewDidSelect(_ indexPath:IndexPath){
         
+    }
+    
+    func requestMealOtherItem(model:PackageModel) {
+        let url = "\(BaseUrl)\(PackageDesc)"
+        let parameters = ["tcid":model.tcId]
+        BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
+            if !resultDic.isCompleted {
+                self.otherItme = PackageDescModel.init(fromDictionary: resultDic.value as! NSDictionary)
+            }
+        }
     }
     
     //MARK: NetWorkingRequest

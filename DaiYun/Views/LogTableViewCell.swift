@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 enum LogType {
     case NoneImage
@@ -53,6 +54,19 @@ class LogView: UIView {
         self.addSubview(imageView)
     }
     
+    func setUpData(model:LogModel) {
+        titleLabel.text = model.dlTitle
+        imageView.sd_setImage(with: URL.init(string: model.dlImg), placeholderImage: nil, options: SDWebImageOptions.retryFailed, progress: { (start, end, url) in
+            
+        }) { (image, error, cacheType, url) in
+            
+        }
+        titleLabel.snp.updateConstraints { (make) in
+            make.height.equalTo(model.dlTitle.heightWithConstrainedWidth(model.dlTitle, font: App_Theme_PinFan_R_14_Font!, width: SCREENWIDTH - 90))
+        }
+        self.updateConstraintsIfNeeded()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -62,8 +76,13 @@ class LogView: UIView {
     }
     
     func setUpOneImages(){
-        imageView.frame = CGRect.init(x: 8, y: 0, width: 80, height: 80)
-        titleLabel.frame = CGRect.init(x: 88, y: 0, width: self.frame.size.width - 88, height: 80)
+        imageView.frame = CGRect.init(x: 8, y: 10, width: 70, height: 70)
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(imageView.snp.right).offset(10)
+            make.right.equalTo(self.snp.right).offset(-15)
+            make.top.equalTo(self.snp.top).offset(10)
+            make.height.equalTo(20)
+        }
     }
     
     func setUpTowImages(){
@@ -113,29 +132,35 @@ class LogTableViewCell: UITableViewCell {
         super.updateConstraints()
     }
     
-    func cellSetData(){
+    func cellSetData(model:LogModel){
+        let date = Date.init(timeIntervalSinceReferenceDate: Double(model.dlTime)!)
         timeDay = UILabel.init()
-        timeDay.text = "7/"
+        timeDay.text = "\(date.day)/"
         timeDay.font = App_Theme_PinFan_R_17_Font
         timeDay.textColor = UIColor.init(hexString: App_Theme_384249_Color)
         self.contentView.addSubview(timeDay)
         
         timeMouth = UILabel.init()
-        timeDay.text = "8"
+        timeMouth.text = "\(date.month)"
         timeMouth.font = App_Theme_PinFan_R_14_Font
         timeMouth.textColor = UIColor.init(hexString: App_Theme_384249_Color)
         self.contentView.addSubview(timeMouth)
         
-        for i in 0...2 {
-            var type:LogType = .NoneImage
-            if i == 1 {
-                type = .OneImages
-            }
-            self.contentView.addSubview(LogView.init(frame: CGRect.init(x: 88, y: i * (type == .NoneImage ?  40 : 88), width: Int(SCREENWIDTH - 88), height: type == .NoneImage ?  40 : 88), type:  type))
-
-        }
+//        for i in 0...1 {
+//            
+//            if i == 1 {
+//                type = .OneImages
+//            }
+//            
+//        }
+        let type:LogType = .OneImages
+        let i = 0
+        let view = LogView.init(frame: CGRect.init(x: 88, y: i * (type == .NoneImage ?  40 : 88), width: Int(SCREENWIDTH - 88), height: type == .NoneImage ?  40 : 88), type:  type)
+        view.setUpData(model: model)
+        self.contentView.addSubview(view)
         self.updateConstraints()
     }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

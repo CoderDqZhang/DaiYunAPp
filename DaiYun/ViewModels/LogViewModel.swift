@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import SwifterSwift
 
 class LogViewModel: BaseViewModel {
 
-    let models = NSMutableArray.init()
+    var models = NSMutableArray.init()
     override init() {
         super.init()
     }
     
     //MARK: TableViewCellSetData
     func tableViewLogTableViewCellSetData(_ indexPath:IndexPath, cell:LogTableViewCell) {
-        cell.cellSetData()
+        if self.models.count > 0 {
+            cell.cellSetData(model: LogModel.init(fromDictionary: self.models[indexPath.row] as! NSDictionary))
+        }
     }
     
     func requestNetWork(model:MotherModel){
@@ -26,7 +29,7 @@ class LogViewModel: BaseViewModel {
                           "dmid":model.dmId]
         BaseNetWorke.sharedInstance.postUrlWithString(url, parameters: parameters as AnyObject).observe { (resultDic) in
             if !resultDic.isCompleted {
-                self.models = NSMutableArray.mj_keyValuesArray(withObjectArray: resultDic.value)
+                self.models = NSMutableArray.mj_keyValuesArray(withObjectArray: resultDic.value as! [Any])
                 self.controller?.tableView.reloadData()
             }
         }
@@ -57,7 +60,7 @@ extension LogViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

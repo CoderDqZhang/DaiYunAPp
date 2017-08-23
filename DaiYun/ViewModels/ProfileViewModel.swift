@@ -83,7 +83,9 @@ class ProfileViewModel: BaseViewModel {
             case 1:
                 NavigationPushView(self.controller!, toConroller: ContactUsViewController())
             case 2:
-                NavigationPushView(self.controller!, toConroller: LogViewController())
+                let toControllerVC = LogViewController()
+                toControllerVC.model = self.models.dmInfo
+                NavigationPushView(self.controller!, toConroller: toControllerVC)
             default:
                 NavigationPushView(self.controller!, toConroller: AboutUsViewController())
             }

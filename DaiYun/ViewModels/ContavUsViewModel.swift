@@ -18,8 +18,12 @@ class ContavUsViewModel: BaseViewModel {
     }
     
     //MARK: TableViewCellSetData
-    func tableViewGloableLableDetailLabelImageCellSetData(_ indexPath:IndexPath, cell:GloableLableDetailLabelImageCell) {
-        cell.setCellData(text: cellStrs[indexPath.row], detailText: detailStr[indexPath.row], detailTextColor: UIColor.init(hexString: App_Theme_8A96A2_Color))
+    func tableViewConnectOtherTableViewCellSetData(_ indexPath:IndexPath, cell:ConnectOtherTableViewCell) {
+        cell.cellSetData(str: "I'm new to Swift, how can I convert a String to CGFloat? I tried: var fl: CGFloat = str as CGFloat var fl: CGFloat = (CGFloat)str var fl: CGFloat = CGFloat(str) all ...")
+    }
+    
+    func tableViewConnectUserTableViewCellSetData(_ indexPath:IndexPath, cell:ConnectUserTableViewCell) {
+        cell.cellSetData(str: "这是一个测试的数据")
     }
     
     func tableViewDidSelect(_ indexPath:IndexPath) {
@@ -42,7 +46,16 @@ extension ContavUsViewModel: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        switch indexPath.row {
+        case 0:
+            return tableView.fd_heightForCell(withIdentifier: ConnectUserTableViewCell.description(), configuration: { (cell) in
+                self.tableViewConnectUserTableViewCellSetData(indexPath, cell: cell as! ConnectUserTableViewCell)
+            })
+        default:
+            return tableView.fd_heightForCell(withIdentifier: ConnectOtherTableViewCell.description(), configuration: { (cell) in
+                self.tableViewConnectOtherTableViewCellSetData(indexPath, cell: cell as! ConnectOtherTableViewCell)
+            })
+        }
     }
 }
 
@@ -52,13 +65,21 @@ extension ContavUsViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sessionNumberRow[section]
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: GloableLableDetailLabelImageCell.description(), for: indexPath)
-        self.tableViewGloableLableDetailLabelImageCellSetData(indexPath, cell: cell as! GloableLableDetailLabelImageCell)
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ConnectUserTableViewCell.description(), for: indexPath)
+            self.tableViewConnectUserTableViewCellSetData(indexPath, cell: cell as! ConnectUserTableViewCell)
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ConnectOtherTableViewCell.description(), for: indexPath)
+            self.tableViewConnectOtherTableViewCellSetData(indexPath, cell: cell as! ConnectOtherTableViewCell)
+            return cell
+        }
+        
     }
 }
 

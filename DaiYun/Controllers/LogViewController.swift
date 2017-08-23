@@ -10,12 +10,18 @@ import UIKit
 
 class LogViewController: BaseViewController {
 
+    var model:MotherModel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel(viewModel: LogViewModel(), controller: self)
         self.setUpTableView(style: .plain, cells: [LogTableViewCell.self], controller: self)
         self.tableView.separatorStyle = .none
+        self.bindLogic()
         // Do any additional setup after loading the view.
+    }
+    
+    func bindLogic(){
+        (self.viewModel as! LogViewModel).requestNetWork(model: model)
     }
 
     override func didReceiveMemoryWarning() {
